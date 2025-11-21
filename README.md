@@ -7,12 +7,12 @@
 
 ## 📋 Description
 
-**SailingRaceTrackers** est un système automatisé Node.js spécialisé dans l'extraction et le traitement de données de trackers GPS depuis la plateforme **Geovoile** pour les courses nautiques. Ce système permet de récupérer, décoder et analyser des trajectoires de bateaux en temps réel depuis le système Geovoile utilisé par les plus grandes courses océaniques, avec **mise à jour automatique via GitHub Actions**.
+**SailingRaceTrackers** est un système automatisé Node.js spécialisé dans l'extraction et le traitement de données de trackers GPS depuis la plateforme **Geovoile** pour les courses nautiques. Ce système permet de récupérer, décoder et analyser des trajectoires de bateaux en temps réel depuis le système cartographie Geovoile utilisé par les plus grandes courses océaniques, avec **mise à jour automatique via GitHub Actions**.
 
 Le système s'articule autour de quatre piliers principaux :
 
 - **Extraction automatisée** : Récupération périodique des positions depuis les serveurs Geovoile avec décodage propriétaire
-- **Traitement et analyse** : Conversion, nettoyage et enrichissement des trajectoires avec calculs nautiques
+- **Traitement et analyse** : Conversion, nettoyage et enrichissement
 - **Automatisation GitHub Actions** : Exécution programmée, suivi continu et versioning automatique des données
 - **Export multi-formats** : Génération de fichiers JSON structurés pour analyse et intégration
 
@@ -41,7 +41,7 @@ SailingRaceTrackers implémente le **décodage propriétaire** des données Geov
 - **Format JSON structuré** : Données organisées par bateau avec métadonnées complètes
 - **Trajectoires complètes** : Points GPS avec timestamps pour chaque bateau
 - **Statistiques de course** : Classement, distances, vitesses moyennes
-- **Extraction de métadonnées** : Notebooks Jupyter pour générer les informations bateaux
+- **Extraction de métadonnées** : Notebooks Jupyter pour générer les informations bateaux utiles pour le sous-module servant à visualiser les traces des bateaux sur Windy
 
 ## 🗂️ Structure du projet
 
@@ -63,7 +63,9 @@ SailingRaceTrackers/
 ├── package.json                # Dépendances Node.js
 ├── package-lock.json           # Lock file des dépendances
 ├── .gitignore                  # Fichiers exclus du versioning
+├── pyproject.toml              # Configuration du projet et dépendances
 └── README.md                   # Documentation (ce fichier)
+
 ```
 
 ### Sur la branche master
@@ -78,12 +80,12 @@ La branche **`master`** contient uniquement :
 Le projet utilise une **architecture multi-branches** pour séparer les différentes courses :
 
 ```
-master                    # Documentation et templates
-├── prod-vg2024          # Vendée Globe 2024
-├── prod-minitransat-2025 # Mini Transat 2025 - Production active
-├── prod-tjava-2023      # Transat Jacques Vabre 2023
-├── prod-aucb-2024       # Arkea Ultim Challenge Brest 2024
-└── prod-rab-2023        # Retour à la Base 2023
+master                           # Documentation et templates
+├── prod-transatcafelor-2025   # Transat Jacques Vabre 2023 - Production active
+├── prod-minitransat-2025      # Mini Transat 2025
+├── prod-vg2024                # Vendée Globe 2024
+├── prod-aucb-2024             # Arkea Ultim Challenge Brest 2024
+└── prod-rab-2023              # Retour à la Base 2023
 ```
 
 **Principes de l'architecture :**
@@ -326,112 +328,6 @@ Structure des fichiers `boatinfo_json`:
   }
 }
 ```
-
-#### Workflows d'utilisation
-
-##### Workflow 1 : Consultation des données en temps réel (automatisé)
-
-**Cas d'usage** : Suivre une course en cours sans exécuter de scripts
-
-```bash
-# 1. Cloner le dépôt (première fois uniquement)
-git clone https://github.com/votre-username/SailingRaceTrackers.git
-cd SailingRaceTrackers
-
-# 2. Basculer vers la course souhaitée
-git checkout prod-minitransat-2025
-
-# 3. Récupérer les dernières données (à répéter quand besoin)
-git pull origin prod-minitransat-2025
-
-# 4. Analyser les données
-cat boats_result.json | jq '.result | keys'  # Liste des bateaux
-cat boats_result.json | jq '.result."123"'   # Détails du bateau 123
-
-# 5. Analyser avec Python (optionnel)
-jupyter lab Notebook/Generate_BoatInfo.ipynb
-```
-
-**Avantage** : Données toujours à jour sans rien exécuter. GitHub Actions fait tout le travail !
-
-##### Workflow 2 : Développement et tests locaux
-
-**Cas d'usage** : Développer ou tester des modifications
-
-```bash
-# 1. Basculer vers la branche de production
-git checkout prod-minitransat-2025
-
-# 2. Exécuter manuellement les scripts
-node download-reports.js
-node generate-result.js
-
-# 3. Vérifier les résultats
-git diff boats_result.json  # Comparer avec la version GitHub Actions
-
-# 4. Analyser les données
-cat boats_result.json | jq '.result | length'  # Nombre de bateaux
-```
-
-##### Workflow 3 : Créer une nouvelle branche de production pour une course
-
-**Cas d'usage** : Ajouter le support d'une nouvelle course Geovoile
-
-```bash
-# 1. Partir de master ou d'une branche prod existante
-git checkout master  # ou prod-minitransat-2025 pour partir d'un exemple
-git checkout -b prod-2025
-
-# 2. Modifier les paramètres dans download-reports.js
-# - Ligne 73: geovoileHostname (ex: 'newrace.geovoile.com')
-# - Ligne 74: resourcesBasePath (ex: '/2025/resources/versions/leg1/')
-# - Ligne 75: trackerBasePath (ex: '/2025/tracker/resources/leg1/')
-
-# 3. Tester le téléchargement
-node download-reports.js
-
-# 4. Adapter generate-result.js si nécessaire
-# (généralement fonctionne tel quel si le format Geovoile est standard)
-node generate-result.js
-
-# 5. Vérifier les données générées
-cat boats_result.json | jq '.result | keys'
-
-# 6. Configurer GitHub Actions
-# Modifier .github/workflows/generate-boats-result.yml :
-# - Ligne 1: Nom du workflow
-# - Ligne 11: Nom de la branche dans le trigger
-
-# 7. Pousser vers GitHub
-git add .
-git commit -m "feat: ajout support pour New Race 2025"
-git push origin prod-2025
-```
-
-**Important** : Après le premier push, GitHub Actions se déclenchera automatiquement selon la fréquence configurée.
-
-##### Workflow 4 : Analyse historique d'une course
-
-**Cas d'usage** : Analyser l'évolution d'une course terminée
-
-```bash
-# 1. Cloner la branche de la course
-git checkout prod-vg2024
-
-# 2. Explorer l'historique Git
-git log --oneline --since="2024-11-01" --until="2024-11-10"
-
-# 3. Extraire les données à un instant T
-git checkout <commit-hash> boats_result.json
-
-# 4. Comparer deux instants
-git diff <commit1> <commit2> boats_result.json
-
-# 5. Générer un export de l'évolution (exemple Python)
-# Itérer sur les commits pour extraire les positions au fil du temps
-```
-
-**Avantage** : L'historique Git permet de rejouer la course dans son intégralité !
 
 ## 🔍 Détails techniques
 
@@ -751,12 +647,12 @@ Cette section liste les tâches de développement en cours, les améliorations p
 ### 🧪 Tests à ajouter
 
 ### 🐛 Bugs connus
+-  [ ] **Index des coordonnées GPS dans [`generate-result.js`](generate-result.js:51)** : La ligne `const trackDataArray = boatsData[i][31];` utilise un index fixe (31) qui peut varier selon la structure des données de chaque course Geovoile. Il est nécessaire d'analyser la structure du tableau `boatsData[i]` pour chaque nouvelle course et d'adapter l'index en conséquence pour capturer correctement les coordonnées GPS. Consultez les logs de débogage (lignes 32-47) pour identifier le bon index contenant les données de trajectoire.
 
 ### 🔄 Maintenance
 
 - [ ] Mise à jour régulière des dépendances Node.js
 - [ ] Mise à jour régulière des dépendances Python
-- [ ] Mise à jour annuelle du fichier [LICENSE](./LICENSE)
 - [ ] Mise à jour annuelle des [contributeurs](#-contributeurs) — ajout / modification des rôles
 - [ ] Création d’une documentation dédiée (Sphinx ou pdoc) pour alléger ce fichier
 
@@ -770,17 +666,13 @@ Les scripts ne collectent ni ne transmettent aucune donnée personnelle. Seules 
 
 ### Respect des conditions d'utilisation
 
-Ce projet est conçu pour un usage personnel et éducatif. Assurez-vous de respecter :
-- Les conditions d'utilisation de Geovoile
-- Les limitations de taux de requêtes (rate limiting)
-- Les droits de propriété intellectuelle des organisateurs de courses
+Ce projet est conçu pour un usage personnel et éducatif.
 
 ### Recommandations d'usage
 
 - **Limitez la fréquence** de téléchargement à 5-10 minutes minimum entre requêtes
 - **N'utilisez pas les données** à des fins commerciales sans autorisation
 - **Mentionnez toujours** la source des données (Geovoile) dans vos publications
-
 
 ## 👥 Contributeurs
 
