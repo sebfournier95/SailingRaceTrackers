@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<config name="Mini Transat" category="multiclass real" state="RUNNING" date="2025-10-25T14:00:00Z">
+  <leg num="2" order="2" pro="0" post="0" total="2" start="La Palma" arrival="Saint François">
+    <route>28.68692,-17.75929;28.41764,-17.76222;27.58288,-18.27683;26.14876,-18.86542;25.84934,-20.19174;24.97749,-27.68974;22.48572,-40.54513;18.54331,-54.32161;16.58628,-59.9611;16.31608,-60.66177;16.17445,-61.0288;16.15828,-61.15279;16.2483,-61.26431</route>
+    <runs>
+      <run id="33" length="2606.8">
+        <start name="La Palma" date="2025-10-25T14:00:00Z" lat="28.68958" lng="-17.76022" />
+        <arrival name="Saint François" date="" lat="16.25078" lng="-61.26423" />
+      </run>
+      <run id="34" length="2606.8">
+        <start name="La Palma" date="2025-10-25T14:00:00Z" lat="28.68958" lng="-17.76022" />
+        <arrival name="Saint François" date="" lat="16.25078" lng="-61.26423" />
+      </run>
+    </runs>
+  </leg>
+  <boats>
+    <boatclass id="1" name="Proto" record24h="0" runid="33">
+      <boat id="1019" name="(1019) Big Bounce - Beltrona" sail="1019" nbhulls="5" hullcolors="B1B1B1|FFFFFF|DC1C1C|00FF86|00FF86" trackcolor="B1B1B1" photo="" coef="1000" comment="Raison 21">
+        <crew>
+          <navigator id="1" fname="Felix" lname="Oberle" nat="SUI" photo="oberle_felix.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1026" name="(1026) Uoum" sail="1026" nbhulls="5" hullcolors="009FFF|FFFFFF|FFFFFF|298400|298400" trackcolor="009FFF" photo="" coef="1000" comment="Finot-Conq 21">
+        <crew>
+          <navigator id="1" fname="Robinson" lname="Pozzoli" nat="FRA" photo="pozzoli_robinson.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1044" name="(1044) Brets - Don de Sang Bénévole" sail="1044" nbhulls="6" hullcolors="000000|F9F200|F9F200|F9F200|00FFCD" trackcolor="F9F200" photo="" coef="1000" comment="MM Process 24">
+        <crew>
+          <navigator id="1" fname="Matéo" lname="Lavauzelle" nat="FRA" photo="lavauzelle_mateo.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1046" name="(1046) DMG Mori Sailing Academy 1" sail="1046" nbhulls="5" hullcolors="000000|FFFFFF|FFFFFF|000000|C400FF" trackcolor="FFFFFF" photo="" coef="1000" comment="Raison 22">
+        <crew>
+          <navigator id="1" fname="Hajime" lname="Kokumai" nat="JPN" photo="kokumai_hajime.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1048" name="(1048) DMG Mori Sailing Academy 2" sail="1048" nbhulls="5" hullcolors="000000|FFFFFF|FFFFFF|000000|FF00F1" trackcolor="FFFFFF" photo="" coef="1000" comment="Raison 22">
+        <crew>
+          <navigator id="1" fname="Alexandre" lname="Demange" nat="FRA" photo="demange_alexandre.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1067" name="(1067) Nicomatic - Petit Bateau" sail="1067" nbhulls="6" hullcolors="009FFF|FFFFFF|FFFFFF|FFFFFF|C10081" trackcolor="009FFF" photo="" coef="1000" comment="Manuard 22">
+        <crew>
+          <navigator id="1" fname="Benoit" lname="Marie" nat="FRA" photo="marie_benoit.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1068" name="(1068) Frerots Ad" sail="1068" nbhulls="5" hullcolors="FFFFFF|009FFF|009FFF|00CCE0|00CCE0" trackcolor="009FFF" photo="" coef="1000" comment="Raison 22">
+        <crew>
+          <navigator id="1" fname="Thaïs" lname="Le Cam" nat="FRA" photo="le_cam_thais.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1069" name="(1069) Frerots Branchet" sail="1069" nbhulls="5" hullcolors="FFFFFF|009FFF|009FFF|008DE0|008DE0" trackcolor="009FFF" photo="" coef="1000" comment="Raison 23">
+        <crew>
+          <navigator id="1" fname="Julien" lname="Letissier" nat="FRA" photo="letissier_julien.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="198" name="(198) Des Pieds et Des Mains - Karen Liquid'" sail="198" nbhulls="1" hullcolors="009FFF|FFFFFF|FFFFFF|7D00FF|7D00FF" trackcolor="009FFF" photo="" coef="1000" comment="Magnen 97">
+        <crew>
+          <navigator id="1" fname="Olivier" lname="Le Poittevin" nat="FRA" photo="le_poittevin_olivier.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="304" name="(304) Satanas" sail="304" nbhulls="1" hullcolors="FFFFFF|DC1C1C|DC1C1C|5000A3|5000A3" trackcolor="DC1C1C" photo="" coef="1000" comment="Magnen-Nivelt 01">
+        <crew>
+          <navigator id="1" fname="Marin" lname="Ferey" nat="FRA" photo="ferey_marin.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="312" name="(312) Night Fever" sail="312" nbhulls="1" hullcolors="FFFFFF|009FFF|009FFF|C1004A|C1004A" trackcolor="009FFF" photo="" coef="1000" comment="Villenave 00">
+        <crew>
+          <navigator id="1" fname="Pierre" lname="Le Rolland" nat="FRA" photo="le_rolland_pierre.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="429" name="(429) XFLR6" sail="429" nbhulls="1" hullcolors="DC1C1C|FFFFFF|FFFFFF|008445|008445" trackcolor="DC1C1C" photo="" coef="1000" comment="Lombard 03">
+        <crew>
+          <navigator id="1" fname="Julien" lname="Matha" nat="FRA" photo="matha_julien.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="551" name="(551) Fondation Epanouîs" sail="551" nbhulls="1" hullcolors="FFFFFF|00E076|00E076|00E076|00E076" trackcolor="00E076" photo="" coef="1000" comment="Manuard 05">
+        <crew>
+          <navigator id="1" fname="Pierre-adrien" lname="Morinaux" nat="FRA" photo="morinaux_pierre-adrien.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="618" name="(618) On The Road Again II" sail="618" nbhulls="1" hullcolors="F9F200|FFFFFF|FFFFFF|61A300|61A300" trackcolor="F9F200" photo="" coef="1000" comment="Finot-Conq 06">
+        <crew>
+          <navigator id="1" fname="Ambre" lname="Hasson" nat="USA" photo="hasson_ambre.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="621" name="(621) L'arche Lille - Mare E Vela" sail="621" nbhulls="1" hullcolors="009FFF|FFFFFF|FFFFFF|C1A300|C1A300" trackcolor="009FFF" photo="" coef="1000" comment="Finot-Conq 06">
+        <crew>
+          <navigator id="1" fname="Foucauld" lname="Malard" nat="FRA" photo="malard_foucauld.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="624" name="(624) Grand Ocean 624" sail="624" nbhulls="1" hullcolors="DC1C1C|FFFFFF|009FFF|000FE0|000FE0" trackcolor="DC1C1C" photo="" coef="1000" comment="Lombard 06">
+        <crew>
+          <navigator id="1" fname="Arthur" lname="Paviot" nat="FRA" photo="paviot_arthur.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="630" name="(630) James Caird" sail="630" nbhulls="1" hullcolors="FFFFFF|E00095|E00095|E00095|E00095" trackcolor="E00095" photo="" coef="1000" comment="Manuard 06">
+        <crew>
+          <navigator id="1" fname="Louis" lname="Hulet" nat="FRA" photo="hulet_louis.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="716" name="(716) Hader Solutions" sail="716" nbhulls="4" hullcolors="FFFFFF|009FFF|009FFF|009FFF|AD00E0" trackcolor="009FFF" photo="" coef="1000" comment="Lombard 08">
+        <crew>
+          <navigator id="1" fname="Benoit" lname="Alt" nat="SUI" photo="alt_benoit.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="753" name="(753) Pour France Alzheimer" sail="753" nbhulls="1" hullcolors="FFFFFF|DC1C1C|B1B1B1|0094A3|0094A3" trackcolor="DC1C1C" photo="" coef="1000" comment="Bertrand 09">
+        <crew>
+          <navigator id="1" fname="Erwan" lname="Lebeau" nat="FRA" photo="lebeau_erwan.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="754" name="(754) Minilab" sail="754" nbhulls="4" hullcolors="FFFFFF|007AC1|007AC1|007AC1|007AC1" trackcolor="007AC1" photo="" coef="1000" comment="Manuard 09">
+        <crew>
+          <navigator id="1" fname="Adrien" lname="Marchandise" nat="FRA" photo="marchandise_adrien.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="756" name="(756) Speedy Maltese" sail="756" nbhulls="5" hullcolors="FFFFFF|842500|842500|842500|842500" trackcolor="842500" photo="" coef="1000" comment="Manuard 09">
+        <crew>
+          <navigator id="1" fname="Timothée" lname="Villain-amirat" nat="FRA" photo="villain-amirat_timothee.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="759" name="(759) Ashika II" sail="759" nbhulls="1" hullcolors="009FFF|000000|000000|08FF00|08FF00" trackcolor="009FFF" photo="" coef="1000" comment="Manuard 09">
+        <crew>
+          <navigator id="1" fname="Uroš" lname="Kraševac" nat="SLO" photo="krasevac_uros.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="787" name="(787) Numerobis" sail="787" nbhulls="1" hullcolors="FFFFFF|009FFF|FF75BA|A38900|A38900" trackcolor="009FFF" photo="" coef="1000" comment="Manuard 10">
+        <crew>
+          <navigator id="1" fname="Léo" lname="Lafon" nat="FRA" photo="lafon_leo.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="791" name="(791) Minimoana" sail="791" nbhulls="1" hullcolors="FFFFFF|0044C1|0044C1|0044C1|0044C1" trackcolor="0044C1" photo="" coef="1000" comment="Marin 10">
+        <crew>
+          <navigator id="1" fname="Thomas" lname="Jouans" nat="FRA" photo="jouans_thomas.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="800" name="(800) Metier Interim" sail="800" nbhulls="1" hullcolors="77DF1A|FFFFFF|FFFFFF|00C165|00C165" trackcolor="77DF1A" photo="" coef="1000" comment="Lombard 11">
+        <crew>
+          <navigator id="1" fname="Juliette" lname="Bataille" nat="FRA" photo="bataille_juliette.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="865" name="(865) April Marine" sail="865" nbhulls="5" hullcolors="009FFF|FFFFFF|FFFFFF|50FF00|50FF00" trackcolor="009FFF" photo="" coef="1000" comment="Raison 14">
+        <crew>
+          <navigator id="1" fname="Emma" lname="Le Clech" nat="FRA" photo="le_clech_emma.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="888" name="(888) Eight Cube" sail="888" nbhulls="5" hullcolors="009FFF|F9F200|F9F200|FF0062|FF0062" trackcolor="009FFF" photo="" coef="1000" comment="Mer Forte 15">
+        <crew>
+          <navigator id="1" fname="Elouan" lname="Barnaud" nat="FRA" photo="barnaud_elouan.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="900" name="(900) NST Racing" sail="900" nbhulls="6" hullcolors="FFFFFF|A35B00|A35B00|A35B00|A35B00" trackcolor="A35B00" photo="" coef="1000" comment="Neyhousser 16">
+        <crew>
+          <navigator id="1" fname="Awen" lname="Le Huec" nat="FRA" photo="le_huec_awen.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="934" name="(934) Assomast" sail="934" nbhulls="5" hullcolors="FFFFFF|000000|000000|00FF3E|00FF3E" trackcolor="000000" photo="" coef="1000" comment="Bertrand 17">
+        <crew>
+          <navigator id="1" fname="Mathis" lname="Bourgnon" nat="SUI" photo="bourgnon_mathis.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="945" name="(945) Nass-wind / Les Edg" sail="945" nbhulls="4" hullcolors="FFFFFF|C100B7|C100B7|C100B7|C100B7" trackcolor="C100B7" photo="" coef="1000" comment="Lombard 18">
+        <crew>
+          <navigator id="1" fname="Basile" lname="Gautier" nat="FRA" photo="gautier_basile.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="950" name="(950) Emeraude Voile Solidaire" sail="950" nbhulls="1" hullcolors="FFFFFF|E0BC00|E0BC00|E0BC00|E0BC00" trackcolor="E0BC00" photo="" coef="1000" comment="Lombard 18">
+        <crew>
+          <navigator id="1" fname="Antoine" lname="De Malleray" nat="FRA" photo="de_malleray_antoine.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="967" name="(967) FPFP" sail="967" nbhulls="5" hullcolors="000000|FFD540|FFD540|000000|00E0B5" trackcolor="FFD540" photo="" coef="1000" comment="Raison 22">
+        <crew>
+          <navigator id="1" fname="Matéo" lname="Le Calvic" nat="FRA" photo="le_calvic_mateo.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="983" name="(983) La Fabuleuse Armada" sail="983" nbhulls="1" hullcolors="DC1C1C|FFFFFF|FFFFFF|AAC100|AAC100" trackcolor="DC1C1C" photo="" coef="1000" comment="PS Wevo">
+        <crew>
+          <navigator id="1" fname="Matthieu" lname="Faivre" nat="FRA" photo="faivre_matthieu.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+    </boatclass>
+    <boatclass id="2" name="Série" record24h="0" runid="34">
+      <boat id="1003" name="(1003) Europe" sail="1003" nbhulls="5" hullcolors="FFFFFF|85E000|85E000|85E000|85E000" trackcolor="85E000" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Thiemo" lname="Huuk" nat="GER" photo="huuk_thiemo.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1005" name="(1005) Technip Energies" sail="1005" nbhulls="5" hullcolors="009FFF|FFFFFF|FFFFFF|846F00|846F00" trackcolor="009FFF" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Paul" lname="Lafleur" nat="FRA" photo="lafleur_paul.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1006" name="(1006) Kristina II" sail="1006" nbhulls="5" hullcolors="FFFFFF|009FFF|009FFF|FFFFFF|C16C00" trackcolor="009FFF" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Miguel Angel" lname="Rondon Gonzalez" nat="ESP" photo="rondon_gonzalez_miguel_angel.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1013" name="(1013) Faustyne - Gayam" sail="1013" nbhulls="5" hullcolors="FFFFFF|07E000|07E000|07E000|07E000" trackcolor="07E000" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Yann" lname="Pignet" nat="FRA" photo="pignet_yann.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1017" name="(1017) Ich Bin en Solitaire" sail="1017" nbhulls="1" hullcolors="FFFFFF|E000D4|E000D4|E000D4|E000D4" trackcolor="E000D4" photo="" coef="1000" comment="Pogo 3">
+        <crew>
+          <navigator id="1" fname="Victor" lname="David" nat="FRA" photo="david_victor.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1020" name="(1020) Fondation Don Bosco" sail="1020" nbhulls="5" hullcolors="FFFFFF|00E037|00E037|00E037|00E037" trackcolor="00E037" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Aymeric" lname="Le Renard" nat="FRA" photo="le_renard_aymeric.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1025" name="(1025) Casper - C" sail="1025" nbhulls="5" hullcolors="FFFFFF|00E8FF|00E8FF|FFFFFF|00E8FF" trackcolor="00E8FF" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Cédric" lname="Marc" nat="FRA" photo="marc_cedric.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1028" name="(1028) Mingulay" sail="1028" nbhulls="5" hullcolors="FFFFFF|00C19C|00C19C|00C19C|00C19C" trackcolor="00C19C" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Joshua" lname="Schopfer" nat="SUI" photo="schopfer_joshua.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1034" name="(1034) Clochette" sail="1034" nbhulls="5" hullcolors="FFFFFF|009FFF|009FFF|00A1FF|00A1FF" trackcolor="009FFF" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Hiroki" lname="Nakayama" nat="JPN" photo="nakayama_hiroki.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1035" name="(1035) Sames" sail="1035" nbhulls="5" hullcolors="FFFFFF|77DF1A|77DF1A|2200A3|2200A3" trackcolor="77DF1A" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Ramon" lname="Ribera" nat="ESP" photo="ribera_ramon.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1040" name="(1040) Corto" sail="1040" nbhulls="5" hullcolors="FFFFFF|0059FF|0059FF|0059FF|0059FF" trackcolor="0059FF" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Blaise" lname="Ribon" nat="FRA" photo="ribon_blaise.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1043" name="(1043) Espérance Banlieues" sail="1043" nbhulls="5" hullcolors="FFFFFF|C4E000|C4E000|C4E000|C4E000" trackcolor="C4E000" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Antonin" lname="Chapot" nat="FRA" photo="chapot_antonin.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1047" name="(1047) Pachamama" sail="1047" nbhulls="5" hullcolors="B1B1B1|FFFFFF|FFFFFF|05A300|05A300" trackcolor="B1B1B1" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Joan" lname="Trenchs" nat="ESP" photo="trenchs_joan.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1051" name="(1051) Wallabys" sail="1051" nbhulls="5" hullcolors="FFFFFF|77DF1A|77DF1A|FFFFFF|048400" trackcolor="77DF1A" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Alicia Anna" lname="Pfyffer Von Altishofen" nat="SUI" photo="pfyffer_von_altishofen_alicia_anna.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1054" name="(1054) Cristalmina - Majorica" sail="1054" nbhulls="5" hullcolors="FFFFFF|0011FF|0011FF|0011FF|0011FF" trackcolor="0011FF" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Hugo" lname="Ramon Froye" nat="ESP" photo="ramon_froye_hugo.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1055" name="(1055) Kirby" sail="1055" nbhulls="5" hullcolors="FFFFFF|E00056|E00056|E00056|E00056" trackcolor="E00056" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Loïc" lname="Guyader" nat="FRA" photo="guyader_loic.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1056" name="(1056) Da Gousket" sail="1056" nbhulls="1" hullcolors="FFFFFF|3500FF|3500FF|3500FF|3500FF" trackcolor="3500FF" photo="" coef="1000" comment="Pogo 3">
+        <crew>
+          <navigator id="1" fname="Chu" lname="Yi" nat="CHN" photo="yi_chu.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1071" name="(1071) MNDA - Matilda" sail="1071" nbhulls="5" hullcolors="FFFFFF|000DC1|000DC1|000DC1|000DC1" trackcolor="000DC1" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Clothilde-marie" lname="Bernard" nat="FRA" photo="bernard_clothilde-marie.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1073" name="(1073) Red Hot Mini Pepper" sail="1073" nbhulls="5" hullcolors="FFFFFF|000BA3|000BA3|000BA3|000BA3" trackcolor="000BA3" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Nicolo'" lname="Gamenara" nat="ITA" photo="gamenara_nicolo.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1076" name="(1076) Kokomo" sail="1076" nbhulls="5" hullcolors="009FFF|FF8000|FF8000|C13600|C13600" trackcolor="009FFF" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Noémie" lname="Catalano" nat="FRA" photo="catalano_noemie.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1079" name="(1079) Platypus" sail="1079" nbhulls="5" hullcolors="FFFFFF|00A383|00A383|00A383|00A383" trackcolor="00A383" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Roland" lname="Welzig" nat="AUT" photo="welzig_roland.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1085" name="(1085) Monoka" sail="1085" nbhulls="5" hullcolors="009FFF|77DF1A|77DF1A|9500C1|9500C1" trackcolor="009FFF" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Jan-hendrik" lname="Lenz" nat="GER" photo="lenz_jan-hendrik.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1089" name="(1089) Eki" sail="1089" nbhulls="5" hullcolors="FFFFFF|E03E00|E03E00|E03E00|E03E00" trackcolor="E03E00" photo="" coef="1000" comment="Wip">
+        <crew>
+          <navigator id="1" fname="Cecilia" lname="Zorzi" nat="ITA" photo="zorzi_cecilia.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1093" name="(1093) Allez-hop ! Pure Ocean" sail="1093" nbhulls="5" hullcolors="9B1FE8|FFFFFF|FFFFFF|DFFF00|DFFF00" trackcolor="9B1FE8" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Thibault" lname="Dauvillier" nat="FRA" photo="dauvillier_thibault.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1097" name="(1097) Work In Progress" sail="1097" nbhulls="5" hullcolors="FFFFFF|009FFF|009FFF|008420|008420" trackcolor="009FFF" photo="" coef="1000" comment="Wip">
+        <crew>
+          <navigator id="1" fname="Calliste" lname="Antoine" nat="FRA" photo="antoine_calliste.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="1098" name="(1098) Osmodyn / Build Crew" sail="1098" nbhulls="5" hullcolors="FFFFFF|33A300|33A300|33A300|33A300" trackcolor="33A300" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Arnaud" lname="Kawka" nat="FRA" photo="kawka_arnaud.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="525" name="(525) Alphonse" sail="525" nbhulls="1" hullcolors="009FFF|77DF1A|DC1C1C|98FF00|98FF00" trackcolor="009FFF" photo="" coef="1000" comment="Pogo 2">
+        <crew>
+          <navigator id="1" fname="Jérémy" lname="De Rochefort" nat="FRA" photo="de_rochefort_jeremy.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="654" name="(654) Nolita" sail="654" nbhulls="1" hullcolors="FFFFFF|A32D00|A32D00|A32D00|A32D00" trackcolor="A32D00" photo="" coef="1000" comment="Pogo 2">
+        <crew>
+          <navigator id="1" fname="Anna-liisa" lname="Talts" nat="EST" photo="talts_anna-liisa.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="721" name="(721) Groupe Verpack" sail="721" nbhulls="1" hullcolors="000000|009FFF|009FFF|000000|6E00E0" trackcolor="91D6FF" photo="" coef="1000" comment="Nacira">
+        <crew>
+          <navigator id="1" fname="Cyril" lname="Coulot" nat="SUI" photo="coulot_cyril.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="819" name="(819) Pulse - France Renouvelables" sail="819" nbhulls="1" hullcolors="FFFFFF|0067A3|0067A3|0067A3|0067A3" trackcolor="0067A3" photo="" coef="1000" comment="Nacira">
+        <crew>
+          <navigator id="1" fname="Thomas" lname="Quillasi" nat="FRA" photo="quillasi_thomas.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="860" name="(860) Sea Fever" sail="860" nbhulls="1" hullcolors="FFFFFF|77DF1A|77DF1A|A3009A|A3009A" trackcolor="77DF1A" photo="" coef="1000" comment="Argo">
+        <crew>
+          <navigator id="1" fname="Gráinne" lname="Costigan" nat="IRL" photo="costigan_grainne.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="869" name="(869) Mc Donald's les Sables D'olonne - Aizenay" sail="869" nbhulls="1" hullcolors="77DF1A|F9F200|F9F200|00C12F|00C12F" trackcolor="77DF1A" photo="" coef="1000" comment="Pogo 3">
+        <crew>
+          <navigator id="1" fname="Pierre" lname="Boulbin" nat="FRA" photo="boulbin_pierre.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="870" name="(870) Pacific" sail="870" nbhulls="1" hullcolors="FFFFFF|77DF1A|77DF1A|00A328|00A328" trackcolor="77DF1A" photo="" coef="1000" comment="Ofcet">
+        <crew>
+          <navigator id="1" fname="Martin" lname="Taillandier" nat="FRA" photo="taillandier_martin.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="880" name="(880) Une Spondy En Mini" sail="880" nbhulls="1" hullcolors="FFFFFF|748400|748400|748400|748400" trackcolor="748400" photo="" coef="1000" comment="Ofcet">
+        <crew>
+          <navigator id="1" fname="Thomas" lname="Biasse" nat="FRA" photo="biasse_thomas.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="891" name="(891) Moana" sail="891" nbhulls="1" hullcolors="FFFFFF|2800C1|2800C1|2800C1|2800C1" trackcolor="2800C1" photo="" coef="1000" comment="Ofcet">
+        <crew>
+          <navigator id="1" fname="Victor" lname="Sename" nat="FRA" photo="sename_victor.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="892" name="(892) Ganesh" sail="892" nbhulls="1" hullcolors="FFFFFF|004EE0|004EE0|004EE0|004EE0" trackcolor="004EE0" photo="" coef="1000" comment="Ofcet">
+        <crew>
+          <navigator id="1" fname="Marie" lname="Chaussade" nat="FRA" photo="chaussade_marie.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="896" name="(896) OMS - Amipi" sail="896" nbhulls="1" hullcolors="B1B1B1|77DF1A|77DF1A|8FA300|8FA300" trackcolor="B1B1B1" photo="" coef="1000" comment="Ofcet">
+        <crew>
+          <navigator id="1" fname="Arthur" lname="Peugeot" nat="FRA" photo="peugeot_arthur.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="916" name="(916) Youkounkoun Pour Ensemble2generations" sail="916" nbhulls="1" hullcolors="77DF1A|000000|000000|00846B|00846B" trackcolor="77DF1A" photo="" coef="1000" comment="Pogo 3">
+        <crew>
+          <navigator id="1" fname="Jean-baptiste" lname="Minvielle" nat="FRA" photo="minvielle_jean-baptiste.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="917" name="(917) Moanaiti" sail="917" nbhulls="1" hullcolors="FFFFFF|5F00C1|5F00C1|5F00C1|5F00C1" trackcolor="5F00C1" photo="" coef="1000" comment="Ofcet">
+        <crew>
+          <navigator id="1" fname="Sophie" lname="Delannoy" nat="FRA" photo="delannoy_sophie.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="943" name="(943) Douze Étoiles - Sos Desmoides" sail="943" nbhulls="1" hullcolors="DC1C1C|FFFFFF|FFFFFF|FF00A9|FF00A9" trackcolor="DC1C1C" photo="" coef="1000" comment="Pogo 3">
+        <crew>
+          <navigator id="1" fname="Victor" lname="Le Roy" nat="FRA" photo="le_roy_victor.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="946" name="(946) Mini Skippy" sail="946" nbhulls="5" hullcolors="009FFF|FFFFFF|FFFFFF|00B0C1|00B0C1" trackcolor="009FFF" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Mark" lname="O'connor" nat="IRL" photo="oconnor_mark.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="954" name="(954) AJD Diabète" sail="954" nbhulls="5" hullcolors="FFFFFF|FFD600|FFD600|FFD600|FFD600" trackcolor="FFD600" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Louis" lname="Bouscasse" nat="FRA" photo="bouscasse_louis.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="955" name="(955) Martin d'eau Douce" sail="955" nbhulls="1" hullcolors="009FFF|FFFFFF|FFFFFF|06C100|06C100" trackcolor="009FFF" photo="" coef="1000" comment="Pogo 3">
+        <crew>
+          <navigator id="1" fname="Martin" lname="Brochard" nat="FRA" photo="brochard_martin.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="963" name="(963) Pellipop - PSE : pour Un Sourire D'enfant" sail="963" nbhulls="5" hullcolors="FFFFFF|00A355|00A355|00A355|00A355" trackcolor="00A355" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Gabriel" lname="Bouan" nat="FRA" photo="bouan_gabriel.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="966" name="(966) Unicancer-seeds Bekina" sail="966" nbhulls="1" hullcolors="FFFFFF|DC1C1C|DC1C1C|4F8400|4F8400" trackcolor="DC1C1C" photo="" coef="1000" comment="Pogo 3">
+        <crew>
+          <navigator id="1" fname="Pierrick" lname="Evenou" nat="FRA" photo="evenou_pierrick.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="968" name="(968) Sonmez Global" sail="968" nbhulls="5" hullcolors="FFFFFF|A3003E|A3003E|A3003E|A3003E" trackcolor="A3003E" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Deniz" lname="Bagci" nat="TUR" photo="bagci_deniz.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="975" name="(975) Aelig - Bee Enginering" sail="975" nbhulls="5" hullcolors="009FFF|FFFFFF|FFFFFF|FF4700|FF4700" trackcolor="009FFF" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Thomas" lname="Hamparian" nat="FRA" photo="hamparian_thomas.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="978" name="(978) Mantay" sail="978" nbhulls="5" hullcolors="FFFFFF|3DC100|3DC100|3DC100|3DC100" trackcolor="3DC100" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Nicolas" lname="Schmid" nat="SUI" photo="schmid_nicolas.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="979" name="(979) Expérience Immobilier - Escalier Raux Gicquel" sail="979" nbhulls="5" hullcolors="000000|FFD540|FFD540|000000|46E000" trackcolor="FFD540" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="William" lname="Ollivier" nat="FRA" photo="ollivier_william.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="981" name="(981) AFP - Biocombustibles" sail="981" nbhulls="5" hullcolors="FFFFFF|77DF1A|DC1C1C|FF8F00|FF8F00" trackcolor="77DF1A" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Paul" lname="Cousin" nat="FRA" photo="cousin_paul.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="984" name="(984) Localclimat - GM Développement" sail="984" nbhulls="5" hullcolors="FFFFFF|77DF1A|77DF1A|73C100|73C100" trackcolor="77DF1A" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Antoine" lname="Ouvrard-lanet" nat="FRA" photo="ouvrard-lanet_antoine.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="985" name="(985) ELA - Mets Tes Baskets" sail="985" nbhulls="5" hullcolors="FF75BA|FFFFFF|FFFFFF|E07D00|E07D00" trackcolor="FF75BA" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Antoine" lname="Canivet" nat="FRA" photo="canivet_antoine.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="986" name="(986) Saveurs et Delices" sail="986" nbhulls="5" hullcolors="9C7243|009FFF|DC1C1C|7D00A3|7D00A3" trackcolor="9C7243" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Quentin" lname="Mocudet" nat="FRA" photo="mocudet_quentin.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="993" name="(993) Rastapopoulos" sail="993" nbhulls="5" hullcolors="F9F200|FFFFFF|FFFFFF|0039A3|0039A3" trackcolor="F9F200" photo="" coef="1000" comment="Vector">
+        <crew>
+          <navigator id="1" fname="Arthur" lname="Cabie" nat="FRA" photo="cabie_arthur.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="996" name="(996) Groupe Satov" sail="996" nbhulls="5" hullcolors="FFFFFF|009FFF|77DF1A|FFFFFF|2F00E0" trackcolor="009FFF" photo="" coef="1000" comment="Maxi 2020">
+        <crew>
+          <navigator id="1" fname="Amaury" lname="Guerin" nat="FRA" photo="guerin_amaury.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="997" name="(997) Tanak Tombolog" sail="997" nbhulls="5" hullcolors="FFFFFF|844A00|844A00|844A00|844A00" trackcolor="844A00" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Augustin" lname="Osmont D'amilly" nat="FRA" photo="osmont_damilly_augustin.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+      <boat id="998" name="(998) Seven X Seven" sail="998" nbhulls="5" hullcolors="F9F200|000000|000000|A3006C|A3006C" trackcolor="F9F200" photo="" coef="1000" comment="Maxi">
+        <crew>
+          <navigator id="1" fname="Naho" lname="Takahara" nat="JPN" photo="takahara_naho.jpg" />
+        </crew>
+        <url></url>
+      </boat>
+    </boatclass>
+  </boats>
+  <references />
+  <raceareas>
+    <racearea sid="Zone_interdite_Petite_Terre" loxo="1" restricted="1" live="0" frequency="0" refresh="0">16.18933,-61.09885;16.18112,-61.09668;16.16348,-61.10783;16.15478,-61.1301;16.1752,-61.1412</racearea>
+  </raceareas>
+  <gates />
+  <pointsOfInterest>
+    <layer zoom="0">
+      <point name="Santa Cruz de la Palma" type="start" lat="28.68352" lng="-17.76422" clock="8" scale="1" />
+      <point name="Saint-François" type="arrv" lat="16.25264" lng="-61.27414" clock="10" scale="1" />
+      <point name="¤WP La Palma" type="buoy" lat="26.00000" lng="-19.00000" clock="2" scale="1" />
+    </layer>
+    <layer zoom="150">
+      <point name="Canaries" type="area" lat="28.85833" lng="-15.74367" clock="2" scale="1" />
+      <point name="Açores" type="area" lat="38.12567" lng="-26.90000" clock="2" scale="1" />
+    </layer>
+    <layer zoom="250">
+      <point name="Madère" type="area" lat="32.79167" lng="-16.45550" clock="2" scale="1" />
+    </layer>
+  </pointsOfInterest>
+  <status>
+    <visible>RAC,STA,ARV,PIT,SUS,DNF,NYS,DSQ,CNS,STB,CLG,HLD,REF,TRK</visible>
+    <hidden>STM,DNS,DNC,NL,RET</hidden>
+    <racing>RAC,STA,ARV,PIT,NYS,STB</racing>
+  </status>
+  <tracker>
+    <updates range="1" refresh="0">00:00,04:00,08:00,12:00,16:00,20:00</updates>
+    <sig projection="Mercator" zoommax="800" />
+    <map area="-75,40,75,40">leg2.shapes</map>
+    <bathy area="-100,70,110,70">atlantic_00s70n100w10e_small.png</bathy>
+    <weather advert="MARINE-WEATHER" step="3" amplitude="96" variables="WIND,GUSTS,CURRENT,WAVES,TEMPAIR,TEMPWATER,CLOUDS,PRMSL" />
+    <icelimits north="0" south="0" />
+    <speedgaps over1="0" over2="0" />
+  </tracker>
+  <credits>GEOVOILE_CALCULATION,YELLOWBRICK,MARINE-WEATHER</credits>
+</config>

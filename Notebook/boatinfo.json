@@ -1,0 +1,452 @@
+{
+    "1019": {
+        "boatName": "(1019) Big Bounce - Beltrona",
+        "skipperNames": "Felix_Oberle",
+        "category": "Proto"
+    },
+    "1026": {
+        "boatName": "(1026) Uoum",
+        "skipperNames": "Robinson_Pozzoli",
+        "category": "Proto"
+    },
+    "1044": {
+        "boatName": "(1044) Brets - Don de Sang BÃ©nÃ©vole",
+        "skipperNames": "MatÃ©o_Lavauzelle",
+        "category": "Proto"
+    },
+    "1046": {
+        "boatName": "(1046) DMG Mori Sailing Academy 1",
+        "skipperNames": "Hajime_Kokumai",
+        "category": "Proto"
+    },
+    "1048": {
+        "boatName": "(1048) DMG Mori Sailing Academy 2",
+        "skipperNames": "Alexandre_Demange",
+        "category": "Proto"
+    },
+    "1067": {
+        "boatName": "(1067) Nicomatic - Petit Bateau",
+        "skipperNames": "Benoit_Marie",
+        "category": "Proto"
+    },
+    "1068": {
+        "boatName": "(1068) Frerots Ad",
+        "skipperNames": "ThaÃ¯s_Le Cam",
+        "category": "Proto"
+    },
+    "1069": {
+        "boatName": "(1069) Frerots Branchet",
+        "skipperNames": "Julien_Letissier",
+        "category": "Proto"
+    },
+    "198": {
+        "boatName": "(198) Des Pieds et Des Mains - Karen Liquid'",
+        "skipperNames": "Olivier_Le Poittevin",
+        "category": "Proto"
+    },
+    "304": {
+        "boatName": "(304) Satanas",
+        "skipperNames": "Marin_Ferey",
+        "category": "Proto"
+    },
+    "312": {
+        "boatName": "(312) Night Fever",
+        "skipperNames": "Pierre_Le Rolland",
+        "category": "Proto"
+    },
+    "429": {
+        "boatName": "(429) XFLR6",
+        "skipperNames": "Julien_Matha",
+        "category": "Proto"
+    },
+    "551": {
+        "boatName": "(551) Fondation EpanouÃ®s",
+        "skipperNames": "Pierre-adrien_Morinaux",
+        "category": "Proto"
+    },
+    "618": {
+        "boatName": "(618) On The Road Again II",
+        "skipperNames": "Ambre_Hasson",
+        "category": "Proto"
+    },
+    "621": {
+        "boatName": "(621) L'arche Lille - Mare E Vela",
+        "skipperNames": "Foucauld_Malard",
+        "category": "Proto"
+    },
+    "624": {
+        "boatName": "(624) Grand Ocean 624",
+        "skipperNames": "Arthur_Paviot",
+        "category": "Proto"
+    },
+    "630": {
+        "boatName": "(630) James Caird",
+        "skipperNames": "Louis_Hulet",
+        "category": "Proto"
+    },
+    "716": {
+        "boatName": "(716) Hader Solutions",
+        "skipperNames": "Benoit_Alt",
+        "category": "Proto"
+    },
+    "753": {
+        "boatName": "(753) Pour France Alzheimer",
+        "skipperNames": "Erwan_Lebeau",
+        "category": "Proto"
+    },
+    "754": {
+        "boatName": "(754) Minilab",
+        "skipperNames": "Adrien_Marchandise",
+        "category": "Proto"
+    },
+    "756": {
+        "boatName": "(756) Speedy Maltese",
+        "skipperNames": "TimothÃ©e_Villain-amirat",
+        "category": "Proto"
+    },
+    "759": {
+        "boatName": "(759) Ashika II",
+        "skipperNames": "UroÅ¡_KraÅ¡evac",
+        "category": "Proto"
+    },
+    "787": {
+        "boatName": "(787) Numerobis",
+        "skipperNames": "LÃ©o_Lafon",
+        "category": "Proto"
+    },
+    "791": {
+        "boatName": "(791) Minimoana",
+        "skipperNames": "Thomas_Jouans",
+        "category": "Proto"
+    },
+    "800": {
+        "boatName": "(800) Metier Interim",
+        "skipperNames": "Juliette_Bataille",
+        "category": "Proto"
+    },
+    "865": {
+        "boatName": "(865) April Marine",
+        "skipperNames": "Emma_Le Clech",
+        "category": "Proto"
+    },
+    "888": {
+        "boatName": "(888) Eight Cube",
+        "skipperNames": "Elouan_Barnaud",
+        "category": "Proto"
+    },
+    "900": {
+        "boatName": "(900) NST Racing",
+        "skipperNames": "Awen_Le Huec",
+        "category": "Proto"
+    },
+    "934": {
+        "boatName": "(934) Assomast",
+        "skipperNames": "Mathis_Bourgnon",
+        "category": "Proto"
+    },
+    "945": {
+        "boatName": "(945) Nass-wind / Les Edg",
+        "skipperNames": "Basile_Gautier",
+        "category": "Proto"
+    },
+    "950": {
+        "boatName": "(950) Emeraude Voile Solidaire",
+        "skipperNames": "Antoine_De Malleray",
+        "category": "Proto"
+    },
+    "967": {
+        "boatName": "(967) FPFP",
+        "skipperNames": "MatÃ©o_Le Calvic",
+        "category": "Proto"
+    },
+    "983": {
+        "boatName": "(983) La Fabuleuse Armada",
+        "skipperNames": "Matthieu_Faivre",
+        "category": "Proto"
+    },
+    "1003": {
+        "boatName": "(1003) Europe",
+        "skipperNames": "Thiemo_Huuk",
+        "category": "SÃ©rie"
+    },
+    "1005": {
+        "boatName": "(1005) Technip Energies",
+        "skipperNames": "Paul_Lafleur",
+        "category": "SÃ©rie"
+    },
+    "1006": {
+        "boatName": "(1006) Kristina II",
+        "skipperNames": "Miguel Angel_Rondon Gonzalez",
+        "category": "SÃ©rie"
+    },
+    "1013": {
+        "boatName": "(1013) Faustyne - Gayam",
+        "skipperNames": "Yann_Pignet",
+        "category": "SÃ©rie"
+    },
+    "1017": {
+        "boatName": "(1017) Ich Bin en Solitaire",
+        "skipperNames": "Victor_David",
+        "category": "SÃ©rie"
+    },
+    "1020": {
+        "boatName": "(1020) Fondation Don Bosco",
+        "skipperNames": "Aymeric_Le Renard",
+        "category": "SÃ©rie"
+    },
+    "1025": {
+        "boatName": "(1025) Casper - C",
+        "skipperNames": "CÃ©dric_Marc",
+        "category": "SÃ©rie"
+    },
+    "1028": {
+        "boatName": "(1028) Mingulay",
+        "skipperNames": "Joshua_Schopfer",
+        "category": "SÃ©rie"
+    },
+    "1034": {
+        "boatName": "(1034) Clochette",
+        "skipperNames": "Hiroki_Nakayama",
+        "category": "SÃ©rie"
+    },
+    "1035": {
+        "boatName": "(1035) Sames",
+        "skipperNames": "Ramon_Ribera",
+        "category": "SÃ©rie"
+    },
+    "1040": {
+        "boatName": "(1040) Corto",
+        "skipperNames": "Blaise_Ribon",
+        "category": "SÃ©rie"
+    },
+    "1043": {
+        "boatName": "(1043) EspÃ©rance Banlieues",
+        "skipperNames": "Antonin_Chapot",
+        "category": "SÃ©rie"
+    },
+    "1047": {
+        "boatName": "(1047) Pachamama",
+        "skipperNames": "Joan_Trenchs",
+        "category": "SÃ©rie"
+    },
+    "1051": {
+        "boatName": "(1051) Wallabys",
+        "skipperNames": "Alicia Anna_Pfyffer Von Altishofen",
+        "category": "SÃ©rie"
+    },
+    "1054": {
+        "boatName": "(1054) Cristalmina - Majorica",
+        "skipperNames": "Hugo_Ramon Froye",
+        "category": "SÃ©rie"
+    },
+    "1055": {
+        "boatName": "(1055) Kirby",
+        "skipperNames": "LoÃ¯c_Guyader",
+        "category": "SÃ©rie"
+    },
+    "1056": {
+        "boatName": "(1056) Da Gousket",
+        "skipperNames": "Chu_Yi",
+        "category": "SÃ©rie"
+    },
+    "1071": {
+        "boatName": "(1071) MNDA - Matilda",
+        "skipperNames": "Clothilde-marie_Bernard",
+        "category": "SÃ©rie"
+    },
+    "1073": {
+        "boatName": "(1073) Red Hot Mini Pepper",
+        "skipperNames": "Nicolo'_Gamenara",
+        "category": "SÃ©rie"
+    },
+    "1076": {
+        "boatName": "(1076) Kokomo",
+        "skipperNames": "NoÃ©mie_Catalano",
+        "category": "SÃ©rie"
+    },
+    "1079": {
+        "boatName": "(1079) Platypus",
+        "skipperNames": "Roland_Welzig",
+        "category": "SÃ©rie"
+    },
+    "1085": {
+        "boatName": "(1085) Monoka",
+        "skipperNames": "Jan-hendrik_Lenz",
+        "category": "SÃ©rie"
+    },
+    "1089": {
+        "boatName": "(1089) Eki",
+        "skipperNames": "Cecilia_Zorzi",
+        "category": "SÃ©rie"
+    },
+    "1093": {
+        "boatName": "(1093) Allez-hop ! Pure Ocean",
+        "skipperNames": "Thibault_Dauvillier",
+        "category": "SÃ©rie"
+    },
+    "1097": {
+        "boatName": "(1097) Work In Progress",
+        "skipperNames": "Calliste_Antoine",
+        "category": "SÃ©rie"
+    },
+    "1098": {
+        "boatName": "(1098) Osmodyn / Build Crew",
+        "skipperNames": "Arnaud_Kawka",
+        "category": "SÃ©rie"
+    },
+    "525": {
+        "boatName": "(525) Alphonse",
+        "skipperNames": "JÃ©rÃ©my_De Rochefort",
+        "category": "SÃ©rie"
+    },
+    "654": {
+        "boatName": "(654) Nolita",
+        "skipperNames": "Anna-liisa_Talts",
+        "category": "SÃ©rie"
+    },
+    "721": {
+        "boatName": "(721) Groupe Verpack",
+        "skipperNames": "Cyril_Coulot",
+        "category": "SÃ©rie"
+    },
+    "819": {
+        "boatName": "(819) Pulse - France Renouvelables",
+        "skipperNames": "Thomas_Quillasi",
+        "category": "SÃ©rie"
+    },
+    "860": {
+        "boatName": "(860) Sea Fever",
+        "skipperNames": "GrÃ¡inne_Costigan",
+        "category": "SÃ©rie"
+    },
+    "869": {
+        "boatName": "(869) Mc Donald's les Sables D'olonne - Aizenay",
+        "skipperNames": "Pierre_Boulbin",
+        "category": "SÃ©rie"
+    },
+    "870": {
+        "boatName": "(870) Pacific",
+        "skipperNames": "Martin_Taillandier",
+        "category": "SÃ©rie"
+    },
+    "880": {
+        "boatName": "(880) Une Spondy En Mini",
+        "skipperNames": "Thomas_Biasse",
+        "category": "SÃ©rie"
+    },
+    "891": {
+        "boatName": "(891) Moana",
+        "skipperNames": "Victor_Sename",
+        "category": "SÃ©rie"
+    },
+    "892": {
+        "boatName": "(892) Ganesh",
+        "skipperNames": "Marie_Chaussade",
+        "category": "SÃ©rie"
+    },
+    "896": {
+        "boatName": "(896) OMS - Amipi",
+        "skipperNames": "Arthur_Peugeot",
+        "category": "SÃ©rie"
+    },
+    "916": {
+        "boatName": "(916) Youkounkoun Pour Ensemble2generations",
+        "skipperNames": "Jean-baptiste_Minvielle",
+        "category": "SÃ©rie"
+    },
+    "917": {
+        "boatName": "(917) Moanaiti",
+        "skipperNames": "Sophie_Delannoy",
+        "category": "SÃ©rie"
+    },
+    "943": {
+        "boatName": "(943) Douze Ãtoiles - Sos Desmoides",
+        "skipperNames": "Victor_Le Roy",
+        "category": "SÃ©rie"
+    },
+    "946": {
+        "boatName": "(946) Mini Skippy",
+        "skipperNames": "Mark_O'connor",
+        "category": "SÃ©rie"
+    },
+    "954": {
+        "boatName": "(954) AJD DiabÃ¨te",
+        "skipperNames": "Louis_Bouscasse",
+        "category": "SÃ©rie"
+    },
+    "955": {
+        "boatName": "(955) Martin d'eau Douce",
+        "skipperNames": "Martin_Brochard",
+        "category": "SÃ©rie"
+    },
+    "963": {
+        "boatName": "(963) Pellipop - PSE : pour Un Sourire D'enfant",
+        "skipperNames": "Gabriel_Bouan",
+        "category": "SÃ©rie"
+    },
+    "966": {
+        "boatName": "(966) Unicancer-seeds Bekina",
+        "skipperNames": "Pierrick_Evenou",
+        "category": "SÃ©rie"
+    },
+    "968": {
+        "boatName": "(968) Sonmez Global",
+        "skipperNames": "Deniz_Bagci",
+        "category": "SÃ©rie"
+    },
+    "975": {
+        "boatName": "(975) Aelig - Bee Enginering",
+        "skipperNames": "Thomas_Hamparian",
+        "category": "SÃ©rie"
+    },
+    "978": {
+        "boatName": "(978) Mantay",
+        "skipperNames": "Nicolas_Schmid",
+        "category": "SÃ©rie"
+    },
+    "979": {
+        "boatName": "(979) ExpÃ©rience Immobilier - Escalier Raux Gicquel",
+        "skipperNames": "William_Ollivier",
+        "category": "SÃ©rie"
+    },
+    "981": {
+        "boatName": "(981) AFP - Biocombustibles",
+        "skipperNames": "Paul_Cousin",
+        "category": "SÃ©rie"
+    },
+    "984": {
+        "boatName": "(984) Localclimat - GM DÃ©veloppement",
+        "skipperNames": "Antoine_Ouvrard-lanet",
+        "category": "SÃ©rie"
+    },
+    "985": {
+        "boatName": "(985) ELA - Mets Tes Baskets",
+        "skipperNames": "Antoine_Canivet",
+        "category": "SÃ©rie"
+    },
+    "986": {
+        "boatName": "(986) Saveurs et Delices",
+        "skipperNames": "Quentin_Mocudet",
+        "category": "SÃ©rie"
+    },
+    "993": {
+        "boatName": "(993) Rastapopoulos",
+        "skipperNames": "Arthur_Cabie",
+        "category": "SÃ©rie"
+    },
+    "996": {
+        "boatName": "(996) Groupe Satov",
+        "skipperNames": "Amaury_Guerin",
+        "category": "SÃ©rie"
+    },
+    "997": {
+        "boatName": "(997) Tanak Tombolog",
+        "skipperNames": "Augustin_Osmont D'amilly",
+        "category": "SÃ©rie"
+    },
+    "998": {
+        "boatName": "(998) Seven X Seven",
+        "skipperNames": "Naho_Takahara",
+        "category": "SÃ©rie"
+    }
+}

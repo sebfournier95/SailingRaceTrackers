@@ -1,14 +1,20 @@
-name: Generate boats result
-run-name: ${{ github.actor }} is running boats result generation job 🚀
+name: Generate boats result for Transat Cafe L'Or 2025
+run-name: Boats result generation for Transat Cafe L'Or 2025 🚀
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 on:
-  schedule:
-    - cron: "*/30 * * * *"
+  workflow_dispatch:
+  #schedule:
+  #   - cron: "0 */1 * * *"
 jobs:
   Download-reports:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
+      - name: Check out prod-transatcafelor-2025
         uses: actions/checkout@v4
+        with:
+          ref: prod-transatcafelor-2025
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
