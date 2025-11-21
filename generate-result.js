@@ -28,9 +28,27 @@ for (let i = 0; i < boatsData.length; i++) {
         continue
     }
     const sail = parseInt(boatsData[i][0]);
+    
+    // === DEBUG boatsData STRUCTURE ===
+    console.log('\n=== ANALYSE boatsData pour bateau', sail, '===');
+    console.log('Longueur du tableau boatsData[i]:', boatsData[i].length);
+    console.log('Type de boatsData[i]:', Array.isArray(boatsData[i]) ? 'Array' : typeof boatsData[i]);
+    
+    // Afficher les indices autour de 29
+    console.log('\nÉléments autour de l\'index 29:');
+    for (let idx = 25; idx <= Math.min(40, boatsData[i].length - 1); idx++) {
+        const element = boatsData[i][idx];
+        const elementType = Array.isArray(element) ? `Array[${element.length}]` : typeof element;
+        console.log(`  [${idx}]:`, elementType, '-', Array.isArray(element) ? JSON.stringify(element).substring(0, 100) : element);
+    }
+    
+    // Afficher le dernier élément (qui contient souvent la track)
+    const lastIndex = boatsData[i].length - 1;
+    console.log('\nDernier élément [' + lastIndex + ']:', JSON.stringify(boatsData[i][lastIndex]));
+    
     const locForId = findLocById(jsonTracks.tracks, sail);
     let lastLocDatetime = locForId[0][0];
-    const trackDataArray = boatsData[i][21];
+    const trackDataArray = boatsData[i][31];
     const track = [];
     const firstPoint = [
         (locForId[0][1] / 100000),
@@ -47,6 +65,21 @@ for (let i = 0; i < boatsData.length; i++) {
         track.push(transformedPoint);
     }
 
+    console.log('=== DEBUG trackDataArray ===');
+    console.log('Type:', typeof trackDataArray);
+    console.log('Est un tableau?', Array.isArray(trackDataArray));
+    console.log('Longueur:', trackDataArray?.length);
+    console.log('Contenu complet:', trackDataArray);
+    console.log('Premier élément [0]:', trackDataArray?.[0]);
+    console.log('Type du premier élément:', typeof trackDataArray?.[0]);
+
+    // Vérifier si c'est un tableau imbriqué
+    if (Array.isArray(trackDataArray) && trackDataArray.length > 0) {
+        console.log('trackDataArray[0][0]:', trackDataArray[0][0]);
+        console.log('trackDataArray[0][1]:', trackDataArray[0][1]);
+        console.log('trackDataArray[0][2]:', trackDataArray[0][2]);
+    }
+    
     const lastPoint = [
         trackDataArray[0][1],
         trackDataArray[0][2]

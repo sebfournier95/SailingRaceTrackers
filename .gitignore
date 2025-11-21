@@ -1,2 +1,317 @@
-node_modules/*
+# ============================================================================
+# .gitignore - Configuration professionnelle multi-plateforme
+# ============================================================================
+# Ce fichier spécifie les fichiers et dossiers à ignorer dans le contrôle
+# de version Git. Organisé par catégories selon les meilleures pratiques.
+# ============================================================================
+
+# ============================================================================
+# 1. DÉPENDANCES ET PACKAGES
+# ============================================================================
+# Dépendances Node.js
+node_modules/
+npm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+
+# Dépendances Python
+venv/
+.venv/
+env/
+.env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Dépendances PHP/Composer
+vendor/
+composer.lock
+
+# Dépendances Ruby
+Gemfile.lock
+.bundle/
+
+# Dépendances Java/Maven
+target/
+.m2/
+
+# ============================================================================
+# 2. FICHIERS DE CONFIGURATION SENSIBLES
+# ============================================================================
+# Variables d'environnement
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers de secrets et credentials
+.secrets
+secrets.json
+credentials.json
+.aws/credentials
+.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Fichiers de configuration privée
+config/secrets.yml
+config/database.yml
+config/credentials.yml.enc
+
+# ============================================================================
+# 3. BUILD ET DISTRIBUTION
+# ============================================================================
+# Répertoires de build
+build/
+dist/
+out/
+.next/
+.nuxt/
+.cache/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+
+# Fichiers compilés et objets
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.class
+*.jar
+
+# Fichiers de distribution
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# ============================================================================
+# 4. CACHES ET FICHIERS TEMPORAIRES
+# ============================================================================
+# Caches génériques
+.cache/
+.cache
+cache/
+tmp/
+temp/
+*.tmp
+
+# Fichiers de log
+*.log
+logs/
+*.log.*
+
+# Fichiers temporaires
+*.swp
+*.swo
+*~
+.~*
+*.bak
+*.backup
+*.orig
+
+# Fichiers de session
+.session
+session.json
+
+# ============================================================================
+# 5. IDE ET ÉDITEURS
+# ============================================================================
+# Visual Studio Code
+.vscode/
+.vscode-test/
+*.code-workspace
+.history/
+
+# JetBrains IDEs (IntelliJ, PyCharm, WebStorm, etc.)
+.idea/
+.idea_modules/
+*.iml
+*.iws
+*.ipr
+*.iml
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+.vim/
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Atom
+.atom/
+
+# VS (Visual Studio)
+.vs/
+.vscode/
+
+# ============================================================================
+# 6. SYSTÈME D'EXPLOITATION
+# ============================================================================
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.TemporaryItems
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+
+# ============================================================================
+# 7. FICHIERS DE SYSTÈME DE CONTRÔLE DE VERSION
+# ============================================================================
+# Git
+.git/
+.gitmodules
+.gitattributes
+
+# Autres VCS
+.svn/
+.hg/
+.bzr/
+.darcs/
+_darcs/
+.pijul/
+.jj/
+
+# ============================================================================
+# 8. FICHIERS DE DOCUMENTATION GÉNÉRÉE
+# ============================================================================
+# Documentation générée
+docs/_build/
+site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Javadoc
+javadoc/
+
+# ============================================================================
+# 9. FICHIERS DE TEST ET COUVERTURE
+# ============================================================================
+# Couverture de code
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+.nyc_output/
+
+# Résultats de test
+test-results/
+junit.xml
+
+# ============================================================================
+# 10. FICHIERS DE DÉPENDANCES VERROUILLÉES (optionnel)
+# ============================================================================
+# Décommenter si vous gérez les lock files différemment
+# package-lock.json
+# yarn.lock
+# Gemfile.lock
+# Pipfile.lock
+
+# ============================================================================
+# 11. FICHIERS SPÉCIFIQUES AU PROJET
+# ============================================================================
+# Fichiers de données locales
+*.db
+*.sqlite
+*.sqlite3
+*.mdb
+
+# Fichiers de configuration locale
+local.properties
+local.xml
+
+# Fichiers de build spécifiques
+.gradle/
+.maven/
+
+# ============================================================================
+# 12. FICHIERS COMPRESSÉS ET ARCHIVES
+# ============================================================================
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+*.iso
+*.dmg
+
+# ============================================================================
+# 13. FICHIERS SYSTÈME DIVERS
+# ============================================================================
+# Fichiers de verrouillage
+*.lock
+.lock
+
+# Fichiers PID
+*.pid
+*.pid.lock
+
+# Fichiers de socket
+*.sock
+
+# ============================================================================
+# FIN DU FICHIER .gitignore
+# ============================================================================
