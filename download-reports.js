@@ -70,9 +70,9 @@ var UInt8Array = function (input) {
 
 // ================================ CONSTANTS =================================
 
-const geovoileHostname = 'arkeaultimchallengebrest.geovoile.com';
-const resourcesBasePath = '/2024/resources/versions/';
-const trackerBasePath = '/2024/tracker/resources/';
+const geovoileHostname = 'transatcafelor.geovoile.com';
+const resourcesBasePath = '/2025/resources/versions/';
+const trackerBasePath = '/2025/tracker/resources/';
 
 // ================================== UTILS ===================================
 
@@ -106,6 +106,15 @@ function getTracksVersion(callback) {
 	})
 }
 
+function getConfigVersion(callback) {
+	let legPath = resourcesBasePath + 'v=' + new Date().getTime();
+
+	geoVoileGet(legPath, function (data) {
+		let resourcesVersions = eval("(" + data + ")");
+		callback(resourcesVersions['config']);
+	})
+}
+
 function downloadReport(path, callback) {
 	geoVoileGet(path, function (data) {
 		let uInt8Array = new UInt8Array(data);
@@ -136,4 +145,12 @@ getTracksVersion(function (tracksVersion) {
 	});
 });
 
-
+// Download config
+//getConfigVersion(function (configVersion) {
+//	let configPath = trackerBasePath + 'config/v' + configVersion;
+//	downloadReport(configPath, function (reportData) {
+//		fs.writeFile('./config.json', reportData, err => {
+//			if (err) { handleError(err) }
+//		});
+//	});
+//});
