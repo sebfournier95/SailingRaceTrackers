@@ -93,9 +93,9 @@ master                    # Documentation et templates
 - **Données versionnées** : Les fichiers JSON sont committés automatiquement selon la fréquence définie dans le CRON du workflow
 - **Historique complet** : Chaque commit représente un instant T de la course
 
-> ⚠️ **Important** : Pour utiliser le tracker sur une course, basculez toujours vers la branche `prod-*` correspondante. La branche `master` ne contient que la documentation.
+> ⚠️ **Important** : Pour utiliser le tracker sur une course, basculez toujours vers la branche `prod-*` correspondante. La branche `master` ne contient que la documentation et les workflows des courses qu'on souhaite suivre.
 
-## 🚀 Installation et utilisation
+##  Installation et utilisation
 
 ### Prérequis
 
@@ -159,26 +159,6 @@ source .venv/bin/activate
 uv pip install pandas numpy gpxpy pyproj jupyterlab xmltodict lxml
 ```
 
-##### Alternative avec pip classique
-
-Si vous préférez utiliser pip standard :
-
-```bash
-# Créer un environnement virtuel
-python -m venv .venv
-
-# Activer l'environnement
-# Windows
-.venv\Scripts\activate
-# Linux/macOS
-source .venv/bin/activate
-
-# Installer les dépendances
-pip install pandas numpy gpxpy pyproj jupyterlab xmltodict lxml
-```
-
-> **💡 Pourquoi uv ?** `uv` est 10-100x plus rapide que `pip` pour l'installation de paquets et offre une meilleure gestion des dépendances. Plus d'infos sur [docs.astral.sh/uv](https://docs.astral.sh/uv/)
-
 ### Utilisation
 
 #### Mode 1 : Utilisation automatisée (recommandé)
@@ -209,7 +189,7 @@ git pull origin prod-minitransat-2025
 
 ##### Comprendre l'automatisation GitHub Actions
 
-Le workflow automatique (voir [`.github/workflows/generate-boats-result.yml`](.github/workflows/generate-boats-result.yml)) :
+Le workflow automatique (voir [`.github/workflows/generate-boats-result-template.yml`](.github/workflows/generate-boats-result-template.yml)) :
 
 1. **Déclenchement** : Selon la fréquence définie dans le CRON (ex: `0 */1 * * *` pour toutes les heures) et à chaque push sur la branche
 2. **Téléchargement** : Exécute [`download-reports.js`](download-reports.js) pour récupérer les données Geovoile
@@ -266,9 +246,9 @@ Les **implémentations fonctionnelles** se trouvent dans des **branches `prod-*`
 
 | Course | Branche | Statut | GitHub Actions |
 |--------|---------|--------|----------------|
-| Mini Transat 2025 | `prod-minitransat-2025` | ✅ Active | Automatisé |
+| Transat Café l'Or 2025 | `prod-transatcafelor-2025` | ✅ Active | Automatisé |
+| Mini Transat 2025 | `prod-minitransat-2025` | 📦 Archivée | - |
 | Vendée Globe 2024 | `prod-vg2024` | 📦 Archivée | - |
-| Transat Jacques Vabre 2023 | `prod-tjava-2023` | 📦 Archivée | - |
 | Arkea Ultim Challenge Brest 2024 | `prod-aucb-2024` | 📦 Archivée | - |
 | Retour à la Base 2023 | `prod-rab-2023` | 📦 Archivée | - |
 
@@ -504,82 +484,6 @@ for (let j = 0; j < locForId.length - 1; j++) {
     track.push(transformedPoint);
 }
 ```
-
-## 📊 Courses supportées
-
-Le module supporte toutes les courses utilisant la plateforme **Geovoile**. Chaque course dispose de sa propre **branche de production** (`prod-*`) avec une implémentation fonctionnelle complète.
-
-### Implémentations disponibles
-
-| Course | Année | Branche |
-|--------|-------|---------|
-| **Vendée Globe** | 2024 | `prod-vg2024` | 
-| **Transat Café l'Or** | 2025 | `prod-transatcafelor-2025` |
-| **Vendée Globe** | 2024 | `prod-vg2024` | 
-| **Arkea Ultim Challenge Brest** | 2024 | `prod-aucb-2024` | 
-| **Retour à la Base** | 2023 | `prod-rab-2023` |
-
-> ⚠️ **Important** : La branche `master` contient uniquement des **templates génériques** et des **exemples pédagogiques**. Pour utiliser le tracker, basculez toujours vers la branche `prod-*` correspondante.
-
-### Autres courses potentiellement supportables
-
-Toute course utilisant la plateforme **Geovoile** peut être supportée en créant une nouvelle branche `prod-*`. Exemples de courses compatibles :
-
-- **Route du Rhum** (RdR)
-- **Mini Transat**
-- **The Ocean Race** (certaines éditions)
-- **Solitaire du Figaro**
-- **Transat AG2R La Mondiale**
-
-Pour chaque nouvelle course, il suffit de :
-1. Identifier le hostname du tracker (ex: `tracking2023.transat-jacques-vabre.org`)
-2. Dupliquer et adapter les scripts (ou consulter les branches prod pour des exemples)
-3. Tester le téléchargement et la génération
-
-### Ajout d'une nouvelle course
-
-Pour ajouter le support d'une nouvelle course Geovoile :
-
-1. **Consulter les exemples existants** :
-```bash
-# Voir les branches de production disponibles
-git branch -r | grep prod-
-
-# Exemple : consulter l'implémentation pour la Transat Jacques Vabre
-git checkout prod-tjv-2023
-# Examinez les fichiers download-reports.js et generate-result.js
-```
-
-2. **Dupliquer les scripts existants** :
-```bash
-# Revenir sur la branche de travail
-git checkout dev
-```
-
-3. **Modifier le hostname** dans `download-reports.js` :
-```javascript
-const geovoileHostname = 'tracking2024.newrace.org';
-```
-
-4. **Mettre à jour les noms de fichiers** :
-```javascript
-// Dans download-reports.js
-fs.writeFile('./boats.json', reportData, ...);
-fs.writeFile('./tracks.json', reportData, ...);
-
-// Dans generate-result.js
-const inputJson = fs.readFileSync('boats.json', 'utf8');
-const inputTracks = fs.readFileSync('tracks.json', 'utf8');
-fs.writeFileSync('boats_result.json', resultJson, 'utf8');
-```
-
-5. **Tester le téléchargement** :
-```bash
-node download-reports.js
-node generate-result.js
-```
-
-> **💡 Astuce** : Les branches `prod-xxxxx` contiennent des implémentations complètes et testées pour différentes courses. Utilisez-les comme référence pour identifier les adaptations spécifiques nécessaires (hostname, format de données, particularités de tracking, etc.).
 
 ## 🐙 Bonnes pratiques Git
 
@@ -830,6 +734,8 @@ Version vX.Y.Z : Description
 Cette section liste les tâches de développement en cours, les améliorations prévues et les bugs identifiés.
 
 ### 🚧 Développement en cours
+
+- [ ] Intégration d'un sous-module pour lancer un plugin Windy en local
 
 ### 🔮 Améliorations prévues
 
