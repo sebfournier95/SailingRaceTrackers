@@ -400,7 +400,7 @@ cat boats_result.json | jq '.result | length'  # Nombre de bateaux
 ```bash
 # 1. Partir de master ou d'une branche prod existante
 git checkout master  # ou prod-minitransat-2025 pour partir d'un exemple
-git checkout -b prod-newrace-2025
+git checkout -b prod-2025
 
 # 2. Modifier les paramètres dans download-reports.js
 # - Ligne 73: geovoileHostname (ex: 'newrace.geovoile.com')
@@ -425,7 +425,7 @@ cat boats_result.json | jq '.result | keys'
 # 7. Pousser vers GitHub
 git add .
 git commit -m "feat: ajout support pour New Race 2025"
-git push origin prod-newrace-2025
+git push origin prod-2025
 ```
 
 **Important** : Après le premier push, GitHub Actions se déclenchera automatiquement selon la fréquence configurée.
@@ -511,14 +511,15 @@ Le module supporte toutes les courses utilisant la plateforme **Geovoile**. Chaq
 
 ### Implémentations disponibles
 
-| Course | Année | Code | Branche | Hostname |
-|--------|-------|------|---------|----------|
-| **Vendée Globe** | 2024 | VG | `prod-vg2024` | tracking2024.vendeeglobe.org |
-| **Transat Jacques Vabre** | 2023 | TJV | `prod-tjv-2023` | tracking2023.transat-jacques-vabre.org |
-| **Arkea Ultim Challenge Brest** | 2024 | AUCB | `prod-aucb-2024` | tracking-aucb.geovoile.com |
-| **Retour à la Base** | 2023 | RAB | `prod-rab-2023` | tracking-rab.geovoile.com |
+| Course | Année | Branche |
+|--------|-------|---------|
+| **Vendée Globe** | 2024 | `prod-vg2024` | 
+| **Transat Café l'Or** | 2025 | `prod-transatcafelor-2025` |
+| **Vendée Globe** | 2024 | `prod-vg2024` | 
+| **Arkea Ultim Challenge Brest** | 2024 | `prod-aucb-2024` | 
+| **Retour à la Base** | 2023 | `prod-rab-2023` |
 
-> ⚠️ **Important** : La branche `master` contient uniquement des **templates génériques** et des **exemples pédagogiques** (fichiers `-VG`). Pour utiliser le tracker, basculez toujours vers la branche `prod-*` correspondante.
+> ⚠️ **Important** : La branche `master` contient uniquement des **templates génériques** et des **exemples pédagogiques**. Pour utiliser le tracker, basculez toujours vers la branche `prod-*` correspondante.
 
 ### Autres courses potentiellement supportables
 
@@ -532,7 +533,7 @@ Toute course utilisant la plateforme **Geovoile** peut être supportée en créa
 
 Pour chaque nouvelle course, il suffit de :
 1. Identifier le hostname du tracker (ex: `tracking2023.transat-jacques-vabre.org`)
-2. Dupliquer et adapter les scripts VG (ou consulter les branches prod pour des exemples)
+2. Dupliquer et adapter les scripts (ou consulter les branches prod pour des exemples)
 3. Tester le téléchargement et la génération
 
 ### Ajout d'une nouvelle course
@@ -546,40 +547,36 @@ git branch -r | grep prod-
 
 # Exemple : consulter l'implémentation pour la Transat Jacques Vabre
 git checkout prod-tjv-2023
-# Examinez les fichiers download-reports-TJV.js et generate-result-TJV.js
+# Examinez les fichiers download-reports.js et generate-result.js
 ```
 
 2. **Dupliquer les scripts existants** :
 ```bash
 # Revenir sur la branche de travail
 git checkout dev
-
-# Dupliquer les scripts (ou partir d'un exemple dans une branche prod-)
-cp download-reports-VG.js download-reports-NEWRACE.js
-cp generate-result-VG.js generate-result-NEWRACE.js
 ```
 
-3. **Modifier le hostname** dans `download-reports-NEWRACE.js` :
+3. **Modifier le hostname** dans `download-reports.js` :
 ```javascript
 const geovoileHostname = 'tracking2024.newrace.org';
 ```
 
 4. **Mettre à jour les noms de fichiers** :
 ```javascript
-// Dans download-reports-NEWRACE.js
-fs.writeFile('./boats-NEWRACE.json', reportData, ...);
-fs.writeFile('./tracks-NEWRACE.json', reportData, ...);
+// Dans download-reports.js
+fs.writeFile('./boats.json', reportData, ...);
+fs.writeFile('./tracks.json', reportData, ...);
 
-// Dans generate-result-NEWRACE.js
-const inputJson = fs.readFileSync('boats-NEWRACE.json', 'utf8');
-const inputTracks = fs.readFileSync('tracks-NEWRACE.json', 'utf8');
-fs.writeFileSync('boats_result_NEWRACE.json', resultJson, 'utf8');
+// Dans generate-result.js
+const inputJson = fs.readFileSync('boats.json', 'utf8');
+const inputTracks = fs.readFileSync('tracks.json', 'utf8');
+fs.writeFileSync('boats_result.json', resultJson, 'utf8');
 ```
 
 5. **Tester le téléchargement** :
 ```bash
-node download-reports-NEWRACE.js
-node generate-result-NEWRACE.js
+node download-reports.js
+node generate-result.js
 ```
 
 > **💡 Astuce** : Les branches `prod-xxxxx` contiennent des implémentations complètes et testées pour différentes courses. Utilisez-les comme référence pour identifier les adaptations spécifiques nécessaires (hostname, format de données, particularités de tracking, etc.).
@@ -834,17 +831,7 @@ Cette section liste les tâches de développement en cours, les améliorations p
 
 ### 🚧 Développement en cours
 
-- [ ] Migration vers une architecture modulaire avec décodeur centralisé
-- [ ] Documentation complète de l'algorithme de décodage Geovoile
-
 ### 🔮 Améliorations prévues
-
-#### Module d'extraction
-- [ ] Support de l'authentification pour les courses privées
-- [ ] Système de cache pour optimiser les requêtes répétées
-- [ ] Mode offline avec synchronisation différée
-- [ ] Retry automatique en cas d'échec de téléchargement
-- [ ] Support de proxy pour contourner les restrictions IP
 
 #### Traitement des données
 - [ ] Calcul automatique des statistiques avancées (VMG, polaires)
@@ -854,36 +841,18 @@ Cette section liste les tâches de développement en cours, les améliorations p
 
 #### Export et visualisation
 - [ ] Export vers bases de données (InfluxDB, PostgreSQL)
-- [ ] API REST pour accès aux données en temps réel
-- [ ] Dashboard web de visualisation
-- [ ] Export CSV avec métadonnées enrichies
-
-#### Compatibilité
-- [ ] Support de TypeScript pour meilleure maintenabilité
-- [ ] Tests unitaires pour le décodeur
-- [ ] CI/CD avec GitHub Actions
-- [ ] Conteneurisation Docker
 
 ### 🧪 Tests à ajouter
 
-- [ ] Tests unitaires pour le décodeur Geovoile
-- [ ] Tests d'intégration pour les workflows complets
-- [ ] Tests de validation des données générées
-- [ ] Tests de performance sur grandes quantités de données
-- [ ] Tests de robustesse face aux données corrompues
-
 ### 🐛 Bugs connus
-
-- [ ] Gestion des timestamps négatifs dans certains cas edge
-- [ ] Problèmes d'encodage avec certains caractères spéciaux dans les noms de bateaux accentués
-- [ ] Décodage imparfait quand les données sont partiellement corrompues
 
 ### 🔄 Maintenance
 
 - [ ] Mise à jour régulière des dépendances Node.js
-- [ ] Vérification de la compatibilité avec les nouvelles versions de Geovoile
-- [ ] Nettoyage des fichiers JSON temporaires
-- [ ] Documentation des changements de format Geovoile
+- [ ] Mise à jour régulière des dépendances Python
+- [ ] Mise à jour annuelle du fichier [LICENSE](./LICENSE)
+- [ ] Mise à jour annuelle des [contributeurs](#-contributeurs) — ajout / modification des rôles
+- [ ] Création d’une documentation dédiée (Sphinx ou pdoc) pour alléger ce fichier
 
 > **Note** : Cette liste est maintenue activement. Les éléments cochés sont complétés, les nouveaux items sont ajoutés au fur et à mesure de l'évolution du projet.
 
@@ -928,12 +897,6 @@ Pour toute question ou assistance, contactez l'équipe de développement :
 
 - **Sébastien Fournier** : [sebastien.fournier.95@gmail.com](mailto:sebastien.fournier.95@gmail.com)
 
-## 🙏 Remerciements
-
-- **Geovoile** pour leur plateforme de tracking innovante
-- Les **organisateurs de courses** (Vendée Globe, TJV, etc.) pour les données publiques
-- La **communauté open-source** pour les outils utilisés (Node.js, Python, Jupyter)
-
 ---
 
-**Outil de tracking pour les courses nautiques - Développé avec ❤️ pour les passionnés des trackers de course**
+**Développé avec ❤️ pour les passionnés des trackers de course**
