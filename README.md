@@ -1,13 +1,14 @@
-# GeovoileTracker - Extraction et traitement de données du tracker Geovoile
+# SailingRaceTrackers - Extraction et traitement de données du tracker Geovoile
 
-![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)
+![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)(https://github.com/sebfournier95/SailingRaceTrackers/tree/v0.0.0)
+![Mise à jour](https://img.shields.io/badge/dernière%20mise%20à%20jour-Novembre%202025-green.svg)
 ![Mise à jour](https://img.shields.io/badge/dernière%20mise%20à%20jour-Novembre%202025-green.svg)
 ![Statut](https://img.shields.io/badge/statut-production-brightgreen.svg)
-![Licence](https://img.shields.io/badge/licence-propriétaire-red.svg)
+[![Licence](https://img.shields.io/badge/licence-LGPL_v3-blue.svg)](/LICENCE)
 
 ## 📋 Description
 
-**GeovoileTracker** est un système automatisé Node.js/Python spécialisé dans l'extraction et le traitement de données de trackers GPS depuis la plateforme **Geovoile** pour les courses nautiques de haut niveau. Ce système permet de récupérer, décoder et analyser des trajectoires de bateaux en temps réel depuis le système Geovoile utilisé par les plus grandes courses océaniques, avec **mise à jour automatique via GitHub Actions**.
+**SailingRaceTrackers** est un système automatisé Node.js spécialisé dans l'extraction et le traitement de données de trackers GPS depuis la plateforme **Geovoile** pour les courses nautiques. Ce système permet de récupérer, décoder et analyser des trajectoires de bateaux en temps réel depuis le système Geovoile utilisé par les plus grandes courses océaniques, avec **mise à jour automatique via GitHub Actions**.
 
 Le système s'articule autour de quatre piliers principaux :
 
@@ -18,7 +19,7 @@ Le système s'articule autour de quatre piliers principaux :
 
 ### Particularité technique
 
-GeovoileTracker implémente le **décodage propriétaire** des données Geovoile (format binaire compressé), permettant l'extraction des positions GPS encodées par le système de tracking. Cette implémentation reverse-engineered garantit la compatibilité avec les flux de données officiels des courses et supporte **l'automatisation complète via CI/CD**.
+SailingRaceTrackers implémente le **décodage propriétaire** des données Geovoile (format binaire compressé), permettant l'extraction des positions GPS encodées par le système de tracking. Cette implémentation reverse-engineered garantit la compatibilité avec les flux de données officiels des courses et supporte **l'automatisation complète via CI/CD**.
 
 ## 🌟 Fonctionnalités
 
@@ -48,7 +49,7 @@ GeovoileTracker implémente le **décodage propriétaire** des données Geovoile
 ### Sur les branches de production (`prod-*`)
 
 ```
-GeovoileTracker/
+SailingRaceTrackers/
 ├── download-reports.js         # Script de téléchargement des données Geovoile
 ├── generate-result.js          # Script de génération des résultats traités
 ├── boats.json                  # Données brutes des bateaux (auto-généré)
@@ -90,7 +91,7 @@ master                    # Documentation et templates
 - **Une branche = Une course** : Chaque course a sa propre branche de production
 - **Scripts standardisés** : Tous les scripts utilisent les mêmes noms de fichiers (`download-reports.js`, `generate-result.js`)
 - **Configuration par branche** : Seuls les paramètres (hostname, chemins) changent entre les branches
-- **Données versionnées** : Les fichiers JSON sont committés automatiquement toutes les 30 minutes
+- **Données versionnées** : Les fichiers JSON sont committés automatiquement selon la fréquence définie dans le CRON du workflow
 - **Historique complet** : Chaque commit représente un instant T de la course
 
 > ⚠️ **Important** : Pour utiliser le tracker sur une course, basculez toujours vers la branche `prod-*` correspondante. La branche `master` ne contient que la documentation.
@@ -112,8 +113,8 @@ master                    # Documentation et templates
 #### 1. Cloner le dépôt
 
 ```bash
-git clone https://github.com/votre-username/GeovoileTracker.git
-cd GeovoileTracker
+git clone https://github.com/votre-username/SailingRaceTrackers.git
+cd SailingRaceTrackers
 ```
 
 #### 2. Installer les dépendances Node.js
@@ -183,7 +184,7 @@ pip install pandas numpy gpxpy pyproj jupyterlab xmltodict lxml
 
 #### Mode 1 : Utilisation automatisée (recommandé)
 
-**Le système est entièrement automatisé via GitHub Actions.** Une fois configuré, les données sont mises à jour automatiquement toutes les 30 minutes.
+**Le système est entièrement automatisé via GitHub Actions.** Une fois configuré, les données sont mises à jour automatiquement selon la fréquence définie dans le workflow.
 
 ##### Consulter les données automatiquement générées
 
@@ -201,7 +202,7 @@ git pull origin prod-minitransat-2025
 ```
 
 **Avantages du mode automatisé :**
-- ✅ Mise à jour toutes les 30 minutes sans intervention
+- ✅ Mise à jour automatique périodique sans intervention
 - ✅ Historique complet dans les commits Git
 - ✅ Données toujours disponibles et à jour
 - ✅ Pas besoin d'exécuter les scripts manuellement
@@ -211,7 +212,7 @@ git pull origin prod-minitransat-2025
 
 Le workflow automatique (voir [`.github/workflows/generate-boats-result.yml`](.github/workflows/generate-boats-result.yml)) :
 
-1. **Déclenchement** : Toutes les 30 minutes (cron: `*/30 * * * *`) et à chaque push sur la branche
+1. **Déclenchement** : Selon la fréquence définie dans le CRON (ex: `0 */1 * * *` pour toutes les heures) et à chaque push sur la branche
 2. **Téléchargement** : Exécute [`download-reports.js`](download-reports.js) pour récupérer les données Geovoile
 3. **Traitement** : Exécute [`generate-result.js`](generate-result.js) pour calculer les résultats
 4. **Versioning** : Commit automatique des fichiers JSON avec horodatage
@@ -355,8 +356,8 @@ Structure des fichiers `boatinfo_json`:
 
 ```bash
 # 1. Cloner le dépôt (première fois uniquement)
-git clone https://github.com/votre-username/GeovoileTracker.git
-cd GeovoileTracker
+git clone https://github.com/votre-username/SailingRaceTrackers.git
+cd SailingRaceTrackers
 
 # 2. Basculer vers la course souhaitée
 git checkout prod-minitransat-2025
@@ -428,7 +429,7 @@ git commit -m "feat: ajout support pour New Race 2025"
 git push origin prod-newrace-2025
 ```
 
-**Important** : Après le premier push, GitHub Actions se déclenchera automatiquement toutes les 30 minutes.
+**Important** : Après le premier push, GitHub Actions se déclenchera automatiquement selon la fréquence configurée.
 
 ##### Workflow 4 : Analyse historique d'une course
 
@@ -584,7 +585,7 @@ node generate-result-NEWRACE.js
 
 > **💡 Astuce** : Les branches `prod-xxxxx` contiennent des implémentations complètes et testées pour différentes courses. Utilisez-les comme référence pour identifier les adaptations spécifiques nécessaires (hostname, format de données, particularités de tracking, etc.).
 
-## 🔧 Bonnes pratiques Git
+## 🐙 Bonnes pratiques Git
 
 Ce projet suit un workflow Git structuré pour garantir la qualité du code et la stabilité des versions de production.
 
@@ -595,77 +596,82 @@ Le projet utilise un système de branches pour organiser le développement :
 - **`master`** : Branche de production contenant uniquement le code stable et testé
 - **`dev`** : Branche de développement où les nouvelles fonctionnalités sont intégrées
 - **`feat-xxxxx`** : Branches de fonctionnalités pour le développement isolé de nouvelles fonctionnalités
-  - Exemple : `feat-nouvelle-course-rdr2026`, `feat-export-gpx`, `feat-dashboard-web`
 - **`fix-xxxxx`** : Branches dédiées aux corrections de bugs
-  - Exemple : `fix-decode-timestamps`, `fix-utf8-encoding`
 - **`docs-xxxxx`** : Branches pour les modifications de documentation
-  - Exemple : `docs-update-readme`, `docs-add-algorithm-doc`
-- **`prod-xxxxx`** : Branches de production pour des projets ou courses spécifiques
-  - Exemple : `prod-tjv-2023`, `prod-rdr-2026`, `prod-aucb-2024`
-
-### Conventions de nommage des branches
-
-- Utilisez des **tirets** (`-`) pour séparer le type et le nom : `type-description`
-- Le nom doit être en **kebab-case** (mots en minuscules séparés par des tirets)
-- Soyez **descriptif** mais **concis** : `feat-export-gpx` plutôt que `feat-add-new-export-feature-for-gpx`
-- Pour les branches de production, incluez le **code de la course/projet** et l'**année** : `prod-vg-2024`, `prod-tjv-2023`
+- **`prod-xxxxx`** : Branches de déploiement pour des projets spécifiques
 
 ### Types de commits
 
-Le projet suit la convention [Conventional Commits](https://www.conventionalcommits.org/) pour structurer les messages de commit :
+Le projet suit la convention [Conventional Commits](https://www.conventionalcommits.org/) pour structurer les messages de commit. Chaque commit doit commencer par un type suivi d'une description claire :
 
 #### **`feat:`** Nouvelle fonctionnalité
-Ajout d'une nouvelle fonctionnalité au code.
+Ajout d'une nouvelle fonctionnalité au code. Correspond à une incrémentation MINOR en versionnage sémantique.
 
 **Exemples :**
 ```bash
-feat: ajout du support de la Transat Jacques Vabre 2023
-feat: implémentation du calcul de VMG sur 24h dans generate-result
-feat: ajout de l'export GPX des trajectoires
-feat: création d'un script de téléchargement automatique
+feat: ajout du module d'analyse de densité pour les cachalots
+feat: intégration du support des fichiers AIS pour les trajectoires
+feat: implémentation du calcul de probabilité de collision multi-espèces
 ```
 
 #### **`fix:`** Correction de bug
-Correction d'un bug ou d'un comportement incorrect.
+Correction d'un bug ou d'un comportement incorrect. Correspond à une incrémentation PATCH en versionnage sémantique.
 
 **Exemples :**
 ```bash
-fix: correction du décodage des timestamps négatifs dans UInt8Array
-fix: résolution du problème d'encodage UTF-8 dans boats-VG.json
-fix: correction de la reconstruction des trajectoires avec points manquants
-fix: gestion des erreurs réseau dans download-reports-VG.js
+fix: correction du calcul de distance pour les trajectoires circulaires
+fix: résolution du problème d'encodage UTF-8 dans les fichiers GPX
+fix: correction de la gestion des fuseaux horaires dans les données temporelles
 ```
 
 #### **`docs:`** Documentation
-Modifications concernant uniquement la documentation.
+Modifications concernant uniquement la documentation (README, commentaires, docstrings, etc.). N'affecte pas le code fonctionnel.
 
 **Exemples :**
 ```bash
-docs: mise à jour du README avec exemples de courses
-docs: ajout de documentation sur l'algorithme de décodage
-docs: correction des liens cassés vers les scripts
+docs: mise à jour du guide d'installation avec les nouvelles dépendances
+docs: ajout d'exemples d'utilisation du module de trajectoires
+docs: correction des liens cassés dans le README
+```
+
+#### **`style:`** Formatage du code
+Changements qui n'affectent pas le sens du code (espaces, formatage, points-virgules manquants, etc.).
+
+**Exemples :**
+```bash
+style: application de black sur le module track.py
+style: correction de l'indentation dans les fichiers Python
+style: mise en conformité avec PEP 8 du module density.py
 ```
 
 #### **`refactor:`** Refactorisation
-Modification du code qui n'ajoute pas de fonctionnalité et ne corrige pas de bug.
+Modification du code qui n'ajoute pas de fonctionnalité et ne corrige pas de bug. Améliore la structure interne du code.
 
 **Exemples :**
 ```bash
-refactor: extraction du décodeur UInt8Array en module séparé
-refactor: simplification de la fonction findLocById dans generate-result
-refactor: harmonisation des noms de variables entre download-reports et generate-result
-refactor: réorganisation de la structure des dossiers
+refactor: réorganisation du module d'analyse en sous-modules
+refactor: extraction de la logique de calcul dans une classe dédiée
+refactor: simplification de la fonction de parsing des fichiers GPX
+```
+
+#### **`test:`** Ajout ou modification de tests
+Ajout de tests manquants ou correction de tests existants.
+
+**Exemples :**
+```bash
+test: ajout des tests unitaires pour le module density
+test: correction des tests d'intégration pour l'analyse de collision
+test: amélioration de la couverture de tests pour le module track
 ```
 
 #### **`chore:`** Tâches de maintenance
-Modifications qui ne concernent ni le code source ni les tests.
+Modifications qui ne concernent ni le code source ni les tests (mise à jour de dépendances, configuration, scripts de build, etc.).
 
 **Exemples :**
 ```bash
-chore: mise à jour d'axios vers la version 1.7.7
-chore: ajout des fichiers JSON de données dans .gitignore
-chore: configuration de prettier pour le formatage JavaScript
-chore: mise à jour du package-lock.json
+chore: mise à jour des dépendances Python vers les dernières versions
+chore: ajout de .gitignore pour les fichiers temporaires R
+chore: configuration de pre-commit hooks pour le formatage automatique
 ```
 
 ### Workflow de développement
@@ -678,17 +684,19 @@ git checkout dev
 git pull origin dev
 
 # Créer une nouvelle branche de fonctionnalité
-git checkout -b feat-export-gpx
+git checkout -b feat/nom-de-la-fonctionnalite
 
 # Développer et commiter régulièrement
 git add .
-git commit -m "feat: ajout de la fonctionnalité d'export GPX"
+git commit -m "Description claire des modifications"
 
 # Pousser la branche vers le dépôt distant
-git push origin feat-export-gpx
+git push origin feat/nom-de-la-fonctionnalite
 ```
 
 #### 2. Intégration d'une fonctionnalité
+
+Après validation des tests unitaires :
 
 ```bash
 # Mettre à jour dev avec les dernières modifications
@@ -696,12 +704,10 @@ git checkout dev
 git pull origin dev
 
 # Merger la fonctionnalité dans dev
-git merge feat-export-gpx
+git merge feat/nom-de-la-fonctionnalite
 
+# Résoudre les conflits si nécessaire
 # Tester l'intégration
-node download-reports-VG.js
-node generate-result-VG.js
-# Vérifier que tout fonctionne
 
 # Pousser les modifications
 git push origin dev
@@ -717,18 +723,48 @@ git pull origin master
 # Merger dev dans master
 git merge dev
 
-# Incrémenter la version dans README.md
+# IMPORTANT : Incrémenter la version dans README.md et pyproject.toml
 # Suivre le versionnage sémantique : MAJOR.MINOR.PATCH
+# - MAJOR : changements incompatibles avec les versions précédentes
+# - MINOR : ajout de fonctionnalités rétrocompatibles
+# - PATCH : corrections de bugs rétrocompatibles
+
+# Exemple : 1.0.1 → 1.1.0 (nouvelle fonctionnalité)
+#          1.1.0 → 2.0.0 (changement majeur)
+#          1.1.0 → 1.1.1 (correction de bug)
 
 # Créer un tag de version
-git tag -a v1.1.0 -m "Version 1.1.0 : Ajout export GPX et amélioration décodeur"
+git tag -a v1.1.0 -m "Version 1.1.0 : Description des changements"
 
 # Pousser master et les tags
 git push origin master
 git push origin --tags
 ```
 
+#### 4. Branches de production pour projets spécifiques
+
+Les branches `prod-xxxxx` permettent d'utiliser la version la plus récente du code (depuis `master`) pour réaliser un projet spécifique sans polluer la branche dédiée au code stable. Elles peuvent également servir pour des correctifs urgents qui ne peuvent attendre le cycle normal de développement.
+
+##### Cas d'usage : Projet spécifique
+
+```bash
+# Créer une branche de production depuis master
+git checkout master
+git pull origin master
+git checkout -b prod/nom-du-projet
+
+# Développer et adapter pour le projet
+git add .
+git commit -m "Feat: adaptation pour le projet X"
+
+# Les modifications restent isolées dans cette branche
+# Elles ne sont pas mergées dans master sauf si elles apportent
+# une amélioration générique utile au projet principal
+```
+
 ### Format des messages de commit
+
+Utilisez des messages de commit clairs et descriptifs en respectant le format suivant :
 
 ```bash
 # Format recommandé
@@ -740,17 +776,58 @@ Description détaillée si nécessaire (optionnel)
 - Point 3"
 ```
 
+**Exemples complets :**
+
+```bash
+# Commit simple
+git commit -m "feat: ajout du support des fichiers CSV pour les trajectoires"
+
+# Commit avec description détaillée
+git commit -m "fix: correction du calcul de distance
+
+- Prise en compte de la courbure terrestre
+- Amélioration de la précision pour les longues distances
+- Ajout de tests unitaires pour valider la correction"
+```
+
+Pour plus de détails sur chaque type de commit, consultez la section [Types de commits](#types-de-commits) ci-dessus.
+
 ### Versionnage sémantique
 
 Le projet suit la spécification [Semantic Versioning 2.0.0](https://semver.org/) :
 
 - **Version format** : `MAJOR.MINOR.PATCH`
-- **MAJOR** : Changements incompatibles (ex: refonte complète du décodeur)
-- **MINOR** : Ajout de fonctionnalités rétrocompatibles (ex: nouvelle course)
-- **PATCH** : Corrections de bugs rétrocompatibles (ex: fix décodage)
+- **MAJOR** : Changements incompatibles de l'API
+- **MINOR** : Ajout de fonctionnalités rétrocompatibles
+- **PATCH** : Corrections de bugs rétrocompatibles
 
-Fichier à mettre à jour lors d'un changement de version :
-- Badge de version dans ce README (ligne 3)
+### 🔄 Processus de versionnage automatisé
+
+Le versionnage est entièrement automatisé grâce à GitHub Actions.
+
+Pour publier une nouvelle version :
+
+1. **Faire un commit sur `master`** contenant dans le message un motif du type :
+
+``` python 
+Version vX.Y.Z : Description
+```
+
+2. Lors du push, le workflow :
+- détecte automatiquement le numéro de version `X.Y.Z`
+- met à jour tous les éléments liés à la version dans `README.md` :
+  - badge de version (`version-1.0.1-blue.svg`)
+  - badge “dernière mise à jour” basé sur la date du commit
+  - lien vers le tag (`tree/vX.Y.Z`)
+- met à jour tous les éléments liés à la version dans `pyproject.toml`
+- met à jour automatiquement uv.lock avec la commande `uv lock`
+- génère un **tag annoté** `vX.Y.Z` à partir du message du commit
+- pousse le commit mis à jour ainsi que le tag vers le dépôt
+
+### 📌 À noter
+- Aucun fichier n’a besoin d’être modifié manuellement pour changer de version.
+- Le README du tag `vX.Y.Z` est toujours synchronisé avec celui de `master`.
+- Le tag final suit systématiquement le format : `vMAJOR.MINOR.PATCH`.
 
 ## ✅ Tâches à suivre
 
@@ -833,15 +910,18 @@ Ce projet est conçu pour un usage personnel et éducatif. Assurez-vous de respe
 
 ## 👥 Contributeurs
 
-- **Sébastien Fournier** - Développeur principal - [sebastien.fournier.95@gmail.com](mailto:sebastien.fournier.95@gmail.com)
+| Nom                    | Rôle |
+|------------------------|------|
+| [globe-coder](https://github.com/globe-coder) | Développeur principal (Fork) |
+| [ccyrille](https://github.com/ccyrille) | Contributeur (Fork) |
+| [Bendrog](https://github.com/Bendrog) | Contributeur (Fork) |
+| [sebfournier95](https://github.com/sebfournier95) | Développeur principal |
 
 ## 📄 Licence
 
-Licence propriétaire
+Ce projet est distribué sous la licence **GNU Lesser General Public License v3.0**.
 
-Tous droits réservés.
-
-Ce logiciel est protégé par les lois sur la propriété intellectuelle et les traités internationaux. Toute reproduction ou distribution non autorisée de ce logiciel, ou de toute partie de celui-ci, peut entraîner de graves sanctions civiles et pénales, et sera poursuivie dans toute la mesure permise par la loi.
+Voir le fichier [`LICENCE`](LICENCE) pour plus d'informations.
 
 ## 📞 Contact
 
