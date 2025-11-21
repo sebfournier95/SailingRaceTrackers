@@ -2,7 +2,6 @@
 
 [![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/sebfournier95/SailingRaceTrackers/tree/v0.0.0)
 ![Mise à jour](https://img.shields.io/badge/dernière%20mise%20à%20jour-Novembre%202025-green.svg)
-![Mise à jour](https://img.shields.io/badge/dernière%20mise%20à%20jour-Novembre%202025-green.svg)
 ![Statut](https://img.shields.io/badge/statut-production-brightgreen.svg)
 [![Licence](https://img.shields.io/badge/licence-LGPL_v3-blue.svg)](/LICENCE)
 
