@@ -1,0 +1,130 @@
+name: Update README Version Link, Badges and publish Tag
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    # Ne s'exécute que si le message de commit contient "Version "
+    if: contains(github.event.head_commit.message, 'Version ')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo on default branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: master
+
+      - name: Extract version from commit message
+        run: |
+          MSG="${{ github.event.head_commit.message }}"
+          echo "Commit message: $MSG"
+
+          # Ne garder que la première ligne
+          FIRST_LINE="${MSG%%$'\n'*}"
+          echo "COMMIT_MSG=$FIRST_LINE" >> "$GITHUB_ENV"
+
+          if [[ "$FIRST_LINE" =~ Version[[:space:]]+([Vv]?[0-9]+\.[0-9]+\.[0-9]+) ]]; then
+            RAW="${BASH_REMATCH[1]}"
+            echo "Version brute trouvée: $RAW"
+
+            if [[ "$RAW" =~ ^v[0-9] ]]; then
+              RAW="v${RAW:1}"
+            elif [[ ! "$RAW" =~ ^v[0-9] ]]; then
+              RAW="v${RAW}"
+            fi
+
+            echo "LATEST_TAG=$RAW" >> "$GITHUB_ENV"
+            echo "Dernier tag calculé: $RAW"
+          else
+            echo "Aucun motif de type 'Version X.Y.Z' trouvé dans le message."
+            exit 1
+          fi
+
+      - name: Remove leading v for badge
+        run: echo "CLEAN_TAG=${LATEST_TAG#v}" >> $GITHUB_ENV
+
+      - name: Compute last update month/year from latest tag
+        run: |
+          # Récupère la date du commit courant (celui du push sur master)
+          TAG_DATE=$(git log -1 --format=%cd --date=format:'%Y-%m')
+          YEAR=${TAG_DATE%-*}
+          MONTH=${TAG_DATE#*-}
+
+          case "$MONTH" in
+            01) MONTH_FR="Janvier" ;;
+            02) MONTH_FR="Février" ;;
+            03) MONTH_FR="Mars" ;;
+            04) MONTH_FR="Avril" ;;
+            05) MONTH_FR="Mai" ;;
+            06) MONTH_FR="Juin" ;;
+            07) MONTH_FR="Juillet" ;;
+            08) MONTH_FR="Août" ;;
+            09) MONTH_FR="Septembre" ;;
+            10) MONTH_FR="Octobre" ;;
+            11) MONTH_FR="Novembre" ;;
+            12) MONTH_FR="Décembre" ;;
+            *) MONTH_FR="Inconnu" ;;
+          esac
+
+          echo "UPDATE_BADGE_LABEL=${MONTH_FR}%20${YEAR}" >> $GITHUB_ENV
+
+      - name: Update version link in README.md
+        run: |
+          sed -i -E "s|(tree/)[^)/]+|\1${LATEST_TAG}|g" README.md
+
+      - name: Update version badge in README.md
+        run: |
+          sed -i -E "s|(version-)[^-]+(-blue\.svg)|\1${CLEAN_TAG}\2|" README.md
+
+      - name: Update 'last update' badge in README.md
+        run: |
+          sed -i -E "s|(dernière%20mise%20à%20jour-)[^-]+(-green\.svg)|\1${UPDATE_BADGE_LABEL}\2|" README.md
+          
+      # ⬇⬇⬇ NOUVEAU : mise à jour de la version dans pyproject.toml
+      - name: Update version in pyproject.toml
+        run: |
+          if [ -f pyproject.toml ]; then
+            # Remplace la ligne version = "x.y.z" par la nouvelle valeur (sans le 'v')
+            sed -i -E "s/^version\s*=\s*\"[^\"]+\"/version = \"${CLEAN_TAG}\"/" pyproject.toml
+          else
+            echo "pyproject.toml not found, skipping."
+          fi
+
+      # ⬇⬇⬇ NOUVEAU : installer uv et regénérer uv.lock
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Regenerate uv.lock
+        run: uv lock
+
+      - name: Commit changes (if any) and create tag
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          
+          # Ajoute README + pyproject + uv.lock s'ils existent
+          git add README.md || true
+          git add pyproject.toml || true
+          git add uv.lock || true
+          
+          # Regarde les différences entre l’index et HEAD
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update project files for ${LATEST_TAG}"
+          fi
+
+          # Crée / met à jour le tag sur le dernier commit de master
+          # (celui avec README éventuellement modifié)
+          git tag -f "${LATEST_TAG}"
+
+          # Push commit + tag
+          git push origin master
+          git push -f origin "${LATEST_TAG}"
