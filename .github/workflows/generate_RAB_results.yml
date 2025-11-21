@@ -1,5 +1,5 @@
-name: Generate TGV result
-run-name: ${{ github.actor }} is running TGV result generation job 🚀
+name: Generate RAB result
+run-name: ${{ github.actor }} is running RAB result generation job 🚀
 on:
   schedule:
     - cron: "*/30 * * * *"
@@ -16,12 +16,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Download reports
-        run: node ./download-reports-TJV.js
+        run: node ./download-reports-RAB.js
       - name: Generate result
-        run: node ./generate-result-TJV.js
+        run: node ./generate-result-RAB.js
       - run: echo "CurrentDT=$(date +'%d/%m %H')" >> $GITHUB_ENV
       - name: Push reports & result to repository
         uses: EndBug/add-and-commit@v9
         with:
-          add: boats-TJV.json tracks-TJV.json boats_result_TJV.json
+          add: boats-RAB.json tracks-RAB.json boats_result_RAB.json
           message: "Update ${{ env.CurrentDT }}h GMT"

@@ -7,10 +7,10 @@ const fs = require('fs');
 // implementation from Chrome devtools. Not very nice but it does the job ;-)
 
 var _0Xedc3 = function (_0xc5c0x2) {
-	var _0xc5c0x3 = 8111253;
-	var _0xc5c0x4 = 4544506;
-	var _0xc5c0x5 = 13986479;
-	var _0xc5c0x6 = 16744512;
+	var _0xc5c0x3 = 16512836;
+	var _0xc5c0x4 = 5630680;
+	var _0xc5c0x5 = 8111737;
+	var _0xc5c0x6 = 14108160;
 	for (var _0xc5c0x7 = 0; _0xc5c0x7 < _0xc5c0x2; ++_0xc5c0x7) {
 		_0xc5c0x8()
 	}
@@ -70,8 +70,8 @@ var UInt8Array = function (input) {
 
 // ================================ CONSTANTS =================================
 
-const geovoileHostname = 'transat-jacques-vabre.geovoile.com';
-const resourcesBasePath = '/2023/resources/versions/leg1/';
+const geovoileHostname = 'retouralabase.geovoile.com';
+const resourcesBasePath = '/2023/resources/versions/';
 const trackerBasePath = '/2023/tracker/resources/';
 
 // ================================== UTILS ===================================
@@ -121,7 +121,7 @@ let boatsVersion = Math.floor(new Date().getTime() / 1000 / 5) * 5;
 let boatsPath = trackerBasePath + 'live/v' + boatsVersion;
 
 downloadReport(boatsPath, function (reportData) {
-	fs.writeFile('./boats-TJV.json', reportData, err => {
+	fs.writeFile('./boats-RAB.json', reportData, err => {
 		if (err) { handleError(err) }
 	});
 });
@@ -130,7 +130,7 @@ downloadReport(boatsPath, function (reportData) {
 getTracksVersion(function (tracksVersion) {
 	let tracksPath = trackerBasePath + 'tracks/v' + tracksVersion;
 	downloadReport(tracksPath, function (reportData) {
-		fs.writeFile('./tracks-TJV.json', reportData, err => {
+		fs.writeFile('./tracks-RAB.json', reportData, err => {
 			if (err) { handleError(err) }
 		});
 	});
