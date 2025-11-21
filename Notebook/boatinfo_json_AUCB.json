@@ -1,0 +1,32 @@
+{
+    "3": {
+        "boatName": "ACTUAL Ultim 3",
+        "skipperNames": "Anthony_Marchand",
+        "category": "ULTIM"
+    },
+    "2": {
+        "boatName": "Maxi Banque Populaire XI",
+        "skipperNames": "Armel_Le Cléac'h",
+        "category": "ULTIM"
+    },
+    "1": {
+        "boatName": "Maxi Edmond de Rothschild",
+        "skipperNames": "Charles_Caudrelier",
+        "category": "ULTIM"
+    },
+    "4": {
+        "boatName": "SODEBO Ultim 3",
+        "skipperNames": "Thomas_Coville",
+        "category": "ULTIM"
+    },
+    "5": {
+        "boatName": "SVR-Lazartigue",
+        "skipperNames": "Tom_Laperche",
+        "category": "ULTIM"
+    },
+    "6": {
+        "boatName": "Ultim Adagio",
+        "skipperNames": "Éric_Péron",
+        "category": "ULTIM"
+    }
+}
