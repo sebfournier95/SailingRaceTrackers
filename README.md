@@ -1,6 +1,6 @@
 # SailingRaceTrackers - Extraction et traitement de données du tracker Geovoile
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/sebfournier95/SailingRaceTrackers/tree/v0.0.0)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/sebfournier95/SailingRaceTrackers/tree/v2.0.0)
 ![Mise à jour](https://img.shields.io/badge/dernière%20mise%20à%20jour-Novembre%202025-green.svg)
 ![Statut](https://img.shields.io/badge/statut-production-brightgreen.svg)
 [![Licence](https://img.shields.io/badge/licence-LGPL_v3-blue.svg)](/LICENCE)
@@ -873,9 +873,9 @@ Version vX.Y.Z : Description
 2. Lors du push, le workflow :
 - détecte automatiquement le numéro de version `X.Y.Z`
 - met à jour tous les éléments liés à la version dans `README.md` :
-  - badge de version (`version-1.0.1-blue.svg`)
+  - badge de version (`version-2.0.0-blue.svg`)
   - badge "dernière mise à jour" basé sur la date du commit
-  - lien vers le tag (`tree/vX.Y.Z`)
+  - lien vers le tag (`tree/v2.0.0)
 - met à jour tous les éléments liés à la version dans `pyproject.toml`
 - met à jour automatiquement uv.lock avec la commande `uv lock`
 - génère un **tag annoté** `vX.Y.Z` à partir du message du commit
