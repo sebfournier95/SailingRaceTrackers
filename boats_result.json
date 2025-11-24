@@ -1,13 +1,13 @@
 {
     "result": {
         "62": {
-            "heading": 302,
+            "heading": 304,
             "rank": 35,
             "sail": 62,
-            "timestamp": 1763967661,
+            "timestamp": 1763971243,
             "lat_dec": 46.275,
             "lon_dec": 1.475,
-            "speed": 10.3,
+            "speed": 9.3,
             "1hour_heading": 0,
             "1hour_speed": 0,
             "1hour_vmg": 0,
@@ -19,8 +19,8 @@
             "24hour_heading": 295,
             "24hour_speed": 0,
             "24hour_vmg": 0,
-            "24hour_distance": 237.6,
-            "dtf": 203.3,
+            "24hour_distance": 235.2,
+            "dtf": 195.2,
             "dtl": 0,
             "dtp": 0,
             "darksky_twd": "-",
@@ -7550,8 +7550,12 @@
                     -57.78319000000001
                 ],
                 [
-                    13.993535,
-                    -57.783131
+                    14.07989000000007,
+                    -57.91287000000001
+                ],
+                [
+                    14.07994,
+                    -57.912815
                 ]
             ]
         }
