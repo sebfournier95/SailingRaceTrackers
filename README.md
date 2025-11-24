@@ -20,6 +20,31 @@ Le système s'articule autour de quatre piliers principaux :
 
 SailingRaceTrackers implémente le **décodage propriétaire** des données Geovoile (format binaire compressé), permettant l'extraction des positions GPS encodées par le système de tracking. Cette implémentation reverse-engineered garantit la compatibilité avec les flux de données officiels des courses et supporte **l'automatisation complète via CI/CD**.
 
+---
+
+## 📑 Table des matières
+
+### 🎯 Démarrage rapide
+- [🌟 Fonctionnalités](#-fonctionnalités)
+- [🗂️ Structure du projet](#️-structure-du-projet)
+- [⚙️ Installation et utilisation](#️-installation-et-utilisation)
+
+### 🔧 Aspects techniques
+- [🔍 Détails techniques](#-détails-techniques)
+- [✅ Tâches à suivre](#-tâches-à-suivre)
+
+### 🤝 Communauté et collaboration
+- [🤝 Contribuer au projet](#-contribuer-au-projet)
+- [🐙 Bonnes pratiques Git](#-bonnes-pratiques-git)
+- [🔒 Sécurité et confidentialité](#-sécurité-et-confidentialité)
+
+### ℹ️ Informations légales
+- [👥 Contributeurs](#-contributeurs)
+- [📄 Licence](#-licence)
+- [📞 Contact](#-contact)
+
+---
+
 ## 🌟 Fonctionnalités
 
 ### Extraction de données Geovoile
@@ -97,7 +122,7 @@ master                           # Documentation et templates
 
 > ⚠️ **Important** : Pour utiliser le tracker sur une course, basculez toujours vers la branche `prod-*` correspondante. La branche `master` ne contient que la documentation et les workflows des courses qu'on souhaite suivre.
 
-##  Installation et utilisation
+## ⚙️ Installation et utilisation
 
 ### Prérequis
 
@@ -381,6 +406,242 @@ for (let j = 0; j < locForId.length - 1; j++) {
 }
 ```
 
+## ✅ Tâches à suivre
+
+Cette section liste les tâches de développement en cours, les améliorations prévues et les bugs identifiés.
+
+### 🚧 Développement en cours
+
+- [ ] Intégration d'un sous-module pour lancer un plugin Windy en local
+
+### 🔮 Améliorations prévues
+
+#### Traitement des données
+- [ ] Calcul automatique des statistiques avancées (VMG, polaires)
+- [ ] Détection et correction des anomalies de trajectoire
+- [ ] Interpolation des points manquants
+- [ ] Export vers format GPX pour compatibilité avec logiciels de navigation
+
+#### Export et visualisation
+- [ ] Export vers bases de données (InfluxDB, PostgreSQL)
+
+### 🧪 Tests à ajouter
+
+### 🐛 Bugs connus
+- [ ] **Index des coordonnées GPS dans [`generate-result.js`](generate-result.js:51)** : La ligne `const trackDataArray = boatsData[i][31];` utilise un index fixe (31) qui peut varier selon la structure des données de chaque course Geovoile. Il est nécessaire d'analyser la structure du tableau `boatsData[i]` pour chaque nouvelle course et d'adapter l'index en conséquence pour capturer correctement les coordonnées GPS. Consultez les logs de débogage (lignes 32-47) pour identifier le bon index contenant les données de trajectoire.
+
+### 🔄 Maintenance
+
+- [ ] Mise à jour régulière des dépendances Node.js
+- [ ] Mise à jour régulière des dépendances Python
+- [ ] Mise à jour annuelle des [contributeurs](#-contributeurs) — ajout / modification des rôles
+- [ ] Création d'une documentation dédiée (Sphinx ou pdoc) pour alléger ce fichier
+
+> **Note** : Cette liste est maintenue activement. Les éléments cochés sont complétés, les nouveaux items sont ajoutés au fur et à mesure de l'évolution du projet.
+
+## 🤝 Contribuer au projet
+
+Nous accueillons avec plaisir les contributions de la communauté ! Que vous souhaitiez corriger un bug, améliorer la documentation, ou ajouter une nouvelle fonctionnalité, voici le processus à suivre.
+
+### Processus de contribution via Fork
+
+#### 1. Fork et configuration initiale
+
+```bash
+# 1. Forker le dépôt via l'interface GitHub
+# Cliquer sur le bouton "Fork" en haut à droite de la page du projet
+
+# 2. Cloner votre fork
+git clone https://github.com/votre-username/SailingRaceTrackers.git
+cd SailingRaceTrackers
+
+# 3. Ajouter le dépôt original comme remote "upstream"
+git remote add upstream https://github.com/sebfournier95/SailingRaceTrackers.git
+
+# 4. Vérifier la configuration des remotes
+git remote -v
+# Vous devriez voir :
+# origin    https://github.com/votre-username/SailingRaceTrackers.git (fetch)
+# origin    https://github.com/votre-username/SailingRaceTrackers.git (push)
+# upstream  https://github.com/sebfournier95/SailingRaceTrackers.git (fetch)
+# upstream  https://github.com/sebfournier95/SailingRaceTrackers.git (push)
+```
+
+#### 2. Créer une branche de travail
+
+```bash
+# Mettre à jour votre fork avec les dernières modifications
+git checkout master
+git pull upstream master
+git push origin master
+
+# Créer une branche pour votre contribution
+# Utilisez les préfixes selon le type de contribution :
+# - feat/ pour une nouvelle fonctionnalité
+# - fix/ pour une correction de bug
+# - docs/ pour la documentation
+# - refactor/ pour du refactoring
+# - test/ pour des tests
+
+git checkout -b feat/nom-descriptif-fonctionnalite
+# ou
+git checkout -b fix/description-bug
+# ou
+git checkout -b docs/amelioration-documentation
+```
+
+#### 3. Développer et tester
+
+```bash
+# Installer les dépendances si nécessaire
+npm install
+
+# Faire vos modifications
+# ... éditer les fichiers ...
+
+# Tester localement
+node download-reports.js  # Si applicable
+node generate-result.js   # Si applicable
+
+# Commiter régulièrement avec des messages clairs
+git add .
+git commit -m "feat: description claire de la modification
+
+- Détail 1
+- Détail 2
+- Détail 3"
+```
+
+Suivez les [conventions de commits](#types-de-commits) du projet :
+- `feat:` pour les nouvelles fonctionnalités
+- `fix:` pour les corrections de bugs
+- `docs:` pour la documentation
+- `refactor:` pour du refactoring
+- `test:` pour les tests
+- `chore:` pour la maintenance
+
+#### 4. Soumettre votre Pull Request
+
+```bash
+# Pousser votre branche vers votre fork
+git push origin feat/nom-descriptif-fonctionnalite
+
+# Ensuite, sur GitHub :
+# 1. Aller sur votre fork
+# 2. Cliquer sur "Compare & pull request"
+# 3. Remplir le template de PR avec :
+#    - Description claire des changements
+#    - Motivation de la contribution
+#    - Tests effectués
+#    - Captures d'écran si applicable
+# 4. Soumettre la Pull Request
+```
+
+#### 5. Processus de revue
+
+Une fois votre PR soumise :
+
+1. **Revue automatique** : Les tests GitHub Actions s'exécuteront automatiquement
+2. **Revue par les mainteneurs** : Un membre de l'équipe examinera votre code
+3. **Discussion et ajustements** : Des modifications peuvent être demandées
+4. **Validation et merge** : Une fois approuvée, votre PR sera mergée
+
+Si des modifications sont demandées :
+
+```bash
+# Faire les modifications demandées
+git add .
+git commit -m "fix: correction selon les commentaires de la revue"
+git push origin feat/nom-descriptif-fonctionnalite
+
+# La PR sera automatiquement mise à jour
+```
+
+#### 6. Synchroniser votre fork après merge
+
+```bash
+# Une fois votre PR mergée, mettre à jour votre fork
+git checkout master
+git pull upstream master
+git push origin master
+
+# Supprimer la branche locale et distante (optionnel mais recommandé)
+git branch -d feat/nom-descriptif-fonctionnalite
+git push origin --delete feat/nom-descriptif-fonctionnalite
+```
+
+### Types de contributions acceptées
+
+#### 🐛 Corrections de bugs
+- Corrections de bugs dans les scripts de téléchargement ou de traitement
+- Résolution de problèmes de compatibilité
+- Amélioration de la gestion des erreurs
+
+#### ✨ Nouvelles fonctionnalités
+- Support de nouvelles courses Geovoile
+- Nouveaux formats d'export (GPX, KML, CSV)
+- Calculs nautiques avancés (VMG, polaires)
+- Détection d'anomalies dans les trajectoires
+
+#### 📚 Documentation
+- Amélioration du README
+- Ajout d'exemples d'utilisation
+- Traduction de la documentation
+- Correction de typos ou liens cassés
+
+#### 🧪 Tests
+- Ajout de tests unitaires
+- Amélioration de la couverture de tests
+- Tests d'intégration
+
+#### 🎨 Optimisations
+- Amélioration des performances
+- Refactoring du code
+- Optimisation des algorithmes de décodage
+
+### Règles de contribution
+
+#### Code de qualité
+- ✅ Le code doit être **propre et bien commenté**
+- ✅ Respecter le **style de code existant** (indentation, conventions de nommage)
+- ✅ Ajouter des **commentaires explicatifs** pour la logique complexe
+- ✅ Tester localement avant de soumettre
+
+#### Commits
+- ✅ Messages de commit **clairs et descriptifs**
+- ✅ Suivre la convention [Conventional Commits](https://www.conventionalcommits.org/)
+- ✅ Un commit = une modification logique cohérente
+- ✅ Éviter les commits trop volumineux
+
+#### Pull Requests
+- ✅ Description **claire et complète** de la PR
+- ✅ Référencer les issues concernées si applicable (`Fixes #123`)
+- ✅ **Tests réussis** avant soumission
+- ✅ PR de **taille raisonnable** (éviter les mega-PRs de 1000+ lignes)
+- ✅ S'assurer que la branche est **à jour avec master**
+
+#### Documentation
+- ✅ Mettre à jour le **README** si nécessaire
+- ✅ Documenter les **nouvelles fonctionnalités**
+- ✅ Ajouter des **exemples d'utilisation**
+- ✅ Commenter le code complexe
+
+### Besoin d'aide ?
+
+Si vous avez des questions ou besoin d'assistance :
+
+1. **Issues GitHub** : Ouvrez une issue pour discuter d'une fonctionnalité avant de la développer
+2. **Discussions** : Utilisez l'onglet Discussions pour les questions générales
+3. **Contact** : Contactez [sebastien.fournier.95@gmail.com](mailto:sebastien.fournier.95@gmail.com)
+
+### Code de conduite
+
+En contribuant à ce projet, vous acceptez de :
+- 🤝 Être respectueux et constructif dans vos interactions
+- 💬 Communiquer de manière claire et professionnelle
+- 🎯 Se concentrer sur ce qui est le mieux pour le projet
+- 🌟 Accueillir les nouveaux contributeurs avec bienveillance
+
 ## 🐙 Bonnes pratiques Git
 
 Ce projet suit un workflow Git structuré pour garantir la qualité du code et la stabilité des versions de production.
@@ -613,7 +874,7 @@ Version vX.Y.Z : Description
 - détecte automatiquement le numéro de version `X.Y.Z`
 - met à jour tous les éléments liés à la version dans `README.md` :
   - badge de version (`version-1.0.1-blue.svg`)
-  - badge “dernière mise à jour” basé sur la date du commit
+  - badge "dernière mise à jour" basé sur la date du commit
   - lien vers le tag (`tree/vX.Y.Z`)
 - met à jour tous les éléments liés à la version dans `pyproject.toml`
 - met à jour automatiquement uv.lock avec la commande `uv lock`
@@ -621,42 +882,9 @@ Version vX.Y.Z : Description
 - pousse le commit mis à jour ainsi que le tag vers le dépôt
 
 ### 📌 À noter
-- Aucun fichier n’a besoin d’être modifié manuellement pour changer de version.
+- Aucun fichier n'a besoin d'être modifié manuellement pour changer de version.
 - Le README du tag `vX.Y.Z` est toujours synchronisé avec celui de `master`.
 - Le tag final suit systématiquement le format : `vMAJOR.MINOR.PATCH`.
-
-## ✅ Tâches à suivre
-
-Cette section liste les tâches de développement en cours, les améliorations prévues et les bugs identifiés.
-
-### 🚧 Développement en cours
-
-- [ ] Intégration d'un sous-module pour lancer un plugin Windy en local
-
-### 🔮 Améliorations prévues
-
-#### Traitement des données
-- [ ] Calcul automatique des statistiques avancées (VMG, polaires)
-- [ ] Détection et correction des anomalies de trajectoire
-- [ ] Interpolation des points manquants
-- [ ] Export vers format GPX pour compatibilité avec logiciels de navigation
-
-#### Export et visualisation
-- [ ] Export vers bases de données (InfluxDB, PostgreSQL)
-
-### 🧪 Tests à ajouter
-
-### 🐛 Bugs connus
--  [ ] **Index des coordonnées GPS dans [`generate-result.js`](generate-result.js:51)** : La ligne `const trackDataArray = boatsData[i][31];` utilise un index fixe (31) qui peut varier selon la structure des données de chaque course Geovoile. Il est nécessaire d'analyser la structure du tableau `boatsData[i]` pour chaque nouvelle course et d'adapter l'index en conséquence pour capturer correctement les coordonnées GPS. Consultez les logs de débogage (lignes 32-47) pour identifier le bon index contenant les données de trajectoire.
-
-### 🔄 Maintenance
-
-- [ ] Mise à jour régulière des dépendances Node.js
-- [ ] Mise à jour régulière des dépendances Python
-- [ ] Mise à jour annuelle des [contributeurs](#-contributeurs) — ajout / modification des rôles
-- [ ] Création d’une documentation dédiée (Sphinx ou pdoc) pour alléger ce fichier
-
-> **Note** : Cette liste est maintenue activement. Les éléments cochés sont complétés, les nouveaux items sont ajoutés au fur et à mesure de l'évolution du projet.
 
 ## 🔒 Sécurité et confidentialité
 
