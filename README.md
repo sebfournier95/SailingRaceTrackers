@@ -273,7 +273,7 @@ Les **implémentations fonctionnelles** se trouvent dans des **branches `prod-*`
 
 | Course | Branche | Statut | GitHub Actions |
 |--------|---------|--------|----------------|
-| Transat Café l'Or 2025 | `prod-transatcafelor-2025` | ✅ Active | Automatisé |
+| Transat Café l'Or 2025 | `prod-transatcafelor-2025` | 📦 Archivée | - |
 | Mini Transat 2025 | `prod-minitransat-2025` | 📦 Archivée | - |
 | Vendée Globe 2024 | `prod-vg2024` | 📦 Archivée | - |
 | Arkea Ultim Challenge Brest 2024 | `prod-aucb-2024` | 📦 Archivée | - |
